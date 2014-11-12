@@ -27,6 +27,8 @@ public class ObjectFactory {
     private final static QName _Getaccounttransactionhistoryrequest_QNAME = new QName("http://swifta.com/sub/mats/operation/financial/v1.0", "getaccounttransactionhistoryrequest");
     private final static QName _CashinrequestResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/financial/v1.0", "cashinrequestResponse");
     private final static QName _Gettransactionhistoryrequest_QNAME = new QName("http://swifta.com/sub/mats/operation/financial/v1.0", "gettransactionhistoryrequest");
+    private final static QName _Depositfloat_QNAME = new QName("http://swifta.com/sub/mats/operation/financial/v1.0", "depositfloat");
+    private final static QName _DepositfloatResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/financial/v1.0", "depositfloatResponse");
     private final static QName _Floattransferrequest_QNAME = new QName("http://swifta.com/sub/mats/operation/financial/v1.0", "floattransferrequest");
     private final static QName _Cashinrequest_QNAME = new QName("http://swifta.com/sub/mats/operation/financial/v1.0", "cashinrequest");
     private final static QName _TransfertobankaccountrequestResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/financial/v1.0", "transfertobankaccountrequestResponse");
@@ -143,11 +145,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link DepositfloatResponse }
+     * 
+     */
+    public Depositfloatresponse createDepositfloatResponse() {
+        return new Depositfloatresponse();
+    }
+
+    /**
      * Create an instance of {@link Floattransferrequest }
      * 
      */
     public Floattransferrequest createFloattransferrequest() {
         return new Floattransferrequest();
+    }
+
+    /**
+     * Create an instance of {@link Depositfloat }
+     * 
+     */
+    public Depositfloat createDepositfloat() {
+        return new Depositfloat();
     }
 
     /**
@@ -247,6 +265,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Depositfloatresponse }
+     * 
+     */
+    public Depositfloatresponse createDepositfloatresponse() {
+        return new Depositfloatresponse();
+    }
+
+    /**
      * Create an instance of {@link Getaccounttransactionhistoryresponse }
      * 
      */
@@ -279,6 +305,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://swifta.com/sub/mats/operation/financial/v1.0", name = "gettransactionhistoryrequest")
     public JAXBElement<Gettransactionhistoryrequest> createGettransactionhistoryrequest(Gettransactionhistoryrequest value) {
         return new JAXBElement<Gettransactionhistoryrequest>(_Gettransactionhistoryrequest_QNAME, Gettransactionhistoryrequest.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Depositfloat }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://swifta.com/sub/mats/operation/financial/v1.0", name = "depositfloat")
+    public JAXBElement<Depositfloat> createDepositfloat(Depositfloat value) {
+        return new JAXBElement<Depositfloat>(_Depositfloat_QNAME, Depositfloat.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DepositfloatResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://swifta.com/sub/mats/operation/financial/v1.0", name = "depositfloatResponse")
+    public JAXBElement<Depositfloatresponse> createDepositfloatResponse(Depositfloatresponse value) {
+        return new JAXBElement<Depositfloatresponse>(_DepositfloatResponse_QNAME, Depositfloatresponse.class, null, value);
     }
 
     /**
