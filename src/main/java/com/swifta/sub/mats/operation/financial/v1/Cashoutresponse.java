@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="orginatingpartnerbalanceafter" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="destinationpartnerbalanceafter" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="financialtransactionid" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="extension" type="{http://swifta.com/sub/mats/operation/financial/v1.0}extension" minOccurs="0"/>
+ *         &lt;element name="parameter" type="{http://swifta.com/sub/mats/operation/financial/v1.0}parameterExtension" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlType;
     "orginatingpartnerbalanceafter",
     "destinationpartnerbalanceafter",
     "financialtransactionid",
-    "extension"
+    "parameter"
 })
 public class Cashoutresponse {
 
@@ -43,7 +43,7 @@ public class Cashoutresponse {
     protected String orginatingpartnerbalanceafter;
     protected String destinationpartnerbalanceafter;
     protected String financialtransactionid;
-    protected Extension extension;
+    protected ParameterExtension parameter;
 
     /**
      * Gets the value of the orginatingpartnerfee property.
@@ -142,27 +142,27 @@ public class Cashoutresponse {
     }
 
     /**
-     * Gets the value of the extension property.
+     * Gets the value of the parameter property.
      * 
      * @return
      *     possible object is
-     *     {@link Extension }
+     *     {@link ParameterExtension }
      *     
      */
-    public Extension getExtension() {
-        return extension;
+    public ParameterExtension getParameter() {
+        return parameter;
     }
 
     /**
-     * Sets the value of the extension property.
+     * Sets the value of the parameter property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Extension }
+     *     {@link ParameterExtension }
      *     
      */
-    public void setExtension(Extension value) {
-        this.extension = value;
+    public void setParameter(ParameterExtension value) {
+        this.parameter = value;
     }
 
 }

@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="accounttransactionhistory" type="{http://swifta.com/sub/mats/operation/financial/v1.0}accountTransactionHistory" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="extension" type="{http://swifta.com/sub/mats/operation/financial/v1.0}extension" minOccurs="0"/>
+ *         &lt;element name="extension" type="{http://swifta.com/sub/mats/operation/financial/v1.0}parameterExtension" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -38,7 +38,7 @@ public class Gettransactionhistoryresponse {
 
     @XmlElement(nillable = true)
     protected List<AccountTransactionHistory> accounttransactionhistory;
-    protected Extension extension;
+    protected ParameterExtension extension;
 
     /**
      * Gets the value of the accounttransactionhistory property.
@@ -74,10 +74,10 @@ public class Gettransactionhistoryresponse {
      * 
      * @return
      *     possible object is
-     *     {@link Extension }
+     *     {@link ParameterExtension }
      *     
      */
-    public Extension getExtension() {
+    public ParameterExtension getExtension() {
         return extension;
     }
 
@@ -86,10 +86,10 @@ public class Gettransactionhistoryresponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link Extension }
+     *     {@link ParameterExtension }
      *     
      */
-    public void setExtension(Extension value) {
+    public void setExtension(ParameterExtension value) {
         this.extension = value;
     }
 

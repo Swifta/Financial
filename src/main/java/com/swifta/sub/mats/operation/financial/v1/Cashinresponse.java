@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="orginatingresourcebalanceafter" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="destinationresourcebalanceafter" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="financialtransactionid" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="extension" type="{http://swifta.com/sub/mats/operation/financial/v1.0}extension" minOccurs="0"/>
+ *         &lt;element name="extension" type="{http://swifta.com/sub/mats/operation/financial/v1.0}parameterExtension" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -43,7 +43,7 @@ public class Cashinresponse {
     protected String orginatingresourcebalanceafter;
     protected String destinationresourcebalanceafter;
     protected String financialtransactionid;
-    protected Extension extension;
+    protected ParameterExtension extension;
 
     /**
      * Gets the value of the fee property.
@@ -146,10 +146,10 @@ public class Cashinresponse {
      * 
      * @return
      *     possible object is
-     *     {@link Extension }
+     *     {@link ParameterExtension }
      *     
      */
-    public Extension getExtension() {
+    public ParameterExtension getExtension() {
         return extension;
     }
 
@@ -158,10 +158,10 @@ public class Cashinresponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link Extension }
+     *     {@link ParameterExtension }
      *     
      */
-    public void setExtension(Extension value) {
+    public void setExtension(ParameterExtension value) {
         this.extension = value;
     }
 

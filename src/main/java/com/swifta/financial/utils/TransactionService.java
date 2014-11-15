@@ -65,7 +65,7 @@ public class TransactionService {
 		com.swifta.subsidiary.mats.serviceprovider.operation.spfinancial.v1_0.SpfinancialsStub.ParameterExtension spFinancialExtension = new com.swifta.subsidiary.mats.serviceprovider.operation.spfinancial.v1_0.SpfinancialsStub.ParameterExtension();
 		spFinancialExtension.setMmoperator(extensionparameters.getMmoperator());
 		spFinancialExtension.setExtensionparam((String[]) extensionparameters
-				.getExtension().toArray());
+				.getExtensionparam().toArray());
 
 		cashoutrequest.setExtensionparameters(spFinancialExtension);
 		CashoutrequestE cashoutrequestE = new CashoutrequestE();
@@ -152,14 +152,12 @@ public class TransactionService {
 		logger.info("----------------------initiate Cashinresponse");
 
 		transactionEngineService.initiateCashin();
-		extensionparameters.getExtension();
-		extensionparameters.getMmoperator();
 
 		logger.info("----------------------convert Financial ParameterExtension to spFinancials ParameterExtension");
 		com.swifta.subsidiary.mats.serviceprovider.operation.spfinancial.v1_0.SpfinancialsStub.ParameterExtension spFinancialExtension = new com.swifta.subsidiary.mats.serviceprovider.operation.spfinancial.v1_0.SpfinancialsStub.ParameterExtension();
 		spFinancialExtension.setMmoperator(extensionparameters.getMmoperator());
 		spFinancialExtension.setExtensionparam((String[]) extensionparameters
-				.getExtension().toArray());
+				.getExtensionparam().toArray());
 
 		logger.info("----------------------before instantiating cashoutrequestE");
 		Cashinrequest cashinrequest = new Cashinrequest();

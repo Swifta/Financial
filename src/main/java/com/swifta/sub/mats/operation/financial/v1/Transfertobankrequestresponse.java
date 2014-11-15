@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="transactionid" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="orginatingpartnerbalanceafter" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="orginatingpartnerfee" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="extension" type="{http://swifta.com/sub/mats/operation/financial/v1.0}extension" minOccurs="0"/>
+ *         &lt;element name="extension" type="{http://swifta.com/sub/mats/operation/financial/v1.0}parameterExtension" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -40,7 +40,7 @@ public class Transfertobankrequestresponse {
     protected String transactionid;
     protected String orginatingpartnerbalanceafter;
     protected String orginatingpartnerfee;
-    protected Extension extension;
+    protected ParameterExtension extension;
 
     /**
      * Gets the value of the transactionid property.
@@ -119,10 +119,10 @@ public class Transfertobankrequestresponse {
      * 
      * @return
      *     possible object is
-     *     {@link Extension }
+     *     {@link ParameterExtension }
      *     
      */
-    public Extension getExtension() {
+    public ParameterExtension getExtension() {
         return extension;
     }
 
@@ -131,10 +131,10 @@ public class Transfertobankrequestresponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link Extension }
+     *     {@link ParameterExtension }
      *     
      */
-    public void setExtension(Extension value) {
+    public void setExtension(ParameterExtension value) {
         this.extension = value;
     }
 

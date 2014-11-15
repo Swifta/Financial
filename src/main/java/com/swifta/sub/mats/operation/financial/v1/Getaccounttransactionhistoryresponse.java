@@ -21,7 +21,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="totalreturned" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="accounttransactionhistory" type="{http://swifta.com/sub/mats/operation/financial/v1.0}accountTransactionHistory" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="extension" type="{http://swifta.com/sub/mats/operation/financial/v1.0}extension" minOccurs="0"/>
+ *         &lt;element name="extension" type="{http://swifta.com/sub/mats/operation/financial/v1.0}parameterExtension" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -41,7 +41,7 @@ public class Getaccounttransactionhistoryresponse {
     protected int totalreturned;
     @XmlElement(nillable = true)
     protected List<AccountTransactionHistory> accounttransactionhistory;
-    protected Extension extension;
+    protected ParameterExtension extension;
 
     /**
      * Gets the value of the totalreturned property.
@@ -93,10 +93,10 @@ public class Getaccounttransactionhistoryresponse {
      * 
      * @return
      *     possible object is
-     *     {@link Extension }
+     *     {@link ParameterExtension }
      *     
      */
-    public Extension getExtension() {
+    public ParameterExtension getExtension() {
         return extension;
     }
 
@@ -105,10 +105,10 @@ public class Getaccounttransactionhistoryresponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link Extension }
+     *     {@link ParameterExtension }
      *     
      */
-    public void setExtension(Extension value) {
+    public void setExtension(ParameterExtension value) {
         this.extension = value;
     }
 

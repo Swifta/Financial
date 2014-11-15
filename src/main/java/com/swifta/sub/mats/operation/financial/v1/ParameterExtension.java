@@ -20,7 +20,8 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="mmoperator" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="extension" type="{http://swifta.com/sub/mats/operation/financial/v1.0}extension" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="spTransactionid" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="extensionparam" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -32,13 +33,15 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "parameterExtension", propOrder = {
     "mmoperator",
-    "extension"
+    "spTransactionid",
+    "extensionparam"
 })
 public class ParameterExtension {
 
     protected String mmoperator;
+    protected String spTransactionid;
     @XmlElement(nillable = true)
-    protected List<Extension> extension;
+    protected List<String> extensionparam;
 
     /**
      * Gets the value of the mmoperator property.
@@ -65,32 +68,56 @@ public class ParameterExtension {
     }
 
     /**
-     * Gets the value of the extension property.
+     * Gets the value of the spTransactionid property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getSpTransactionid() {
+        return spTransactionid;
+    }
+
+    /**
+     * Sets the value of the spTransactionid property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setSpTransactionid(String value) {
+        this.spTransactionid = value;
+    }
+
+    /**
+     * Gets the value of the extensionparam property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the extension property.
+     * This is why there is not a <CODE>set</CODE> method for the extensionparam property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getExtension().add(newItem);
+     *    getExtensionparam().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Extension }
+     * {@link String }
      * 
      * 
      */
-    public List<Extension> getExtension() {
-        if (extension == null) {
-            extension = new ArrayList<Extension>();
+    public List<String> getExtensionparam() {
+        if (extensionparam == null) {
+            extensionparam = new ArrayList<String>();
         }
-        return this.extension;
+        return this.extensionparam;
     }
 
 }

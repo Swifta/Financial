@@ -32,12 +32,8 @@
     <xs:complexType name="parameterExtension">
         <xs:sequence>
             <xs:element minOccurs="0" name="mmoperator" type="xs:string"/>
-            <xs:element maxOccurs="unbounded" minOccurs="0" name="extension" nillable="true" type="tns:extension"/>
-        </xs:sequence>
-    </xs:complexType>
-    <xs:complexType name="extension">
-        <xs:sequence>
-            <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##other" processContents="lax"/>
+            <xs:element minOccurs="0" name="spTransactionid" type="xs:string"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="extensionparam" nillable="true" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="transfertobankaccountrequestResponse">
@@ -50,7 +46,7 @@
             <xs:element minOccurs="0" name="transactionid" type="xs:string"/>
             <xs:element minOccurs="0" name="orginatingpartnerbalanceafter" type="xs:string"/>
             <xs:element minOccurs="0" name="orginatingpartnerfee" type="xs:string"/>
-            <xs:element minOccurs="0" name="extension" type="tns:extension"/>
+            <xs:element minOccurs="0" name="extension" type="tns:parameterExtension"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="getaccounttransactionhistoryrequest">
@@ -74,7 +70,7 @@
         <xs:sequence>
             <xs:element name="totalreturned" type="xs:int"/>
             <xs:element maxOccurs="unbounded" minOccurs="0" name="accounttransactionhistory" nillable="true" type="tns:accountTransactionHistory"/>
-            <xs:element minOccurs="0" name="extension" type="tns:extension"/>
+            <xs:element minOccurs="0" name="extension" type="tns:parameterExtension"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="accountTransactionHistory">
@@ -113,7 +109,7 @@
     <xs:complexType name="adjustaccountresponse">
         <xs:sequence>
             <xs:element minOccurs="0" name="StatusCode" type="tns:statusCode"/>
-            <xs:element minOccurs="0" name="extension" type="tns:extension"/>
+            <xs:element minOccurs="0" name="extension" type="tns:parameterExtension"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="floattransferrequest">
@@ -136,7 +132,7 @@
             <xs:element minOccurs="0" name="transactionid" type="xs:string"/>
             <xs:element minOccurs="0" name="orginatingpartnerbalanceafter" type="xs:string"/>
             <xs:element minOccurs="0" name="orginatingpartnerfee" type="xs:string"/>
-            <xs:element minOccurs="0" name="extension" type="tns:extension"/>
+            <xs:element minOccurs="0" name="extension" type="tns:parameterExtension"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="gettransactionhistoryrequest">
@@ -159,7 +155,7 @@
     <xs:complexType name="gettransactionhistoryresponse">
         <xs:sequence>
             <xs:element maxOccurs="unbounded" minOccurs="0" name="accounttransactionhistory" nillable="true" type="tns:accountTransactionHistory"/>
-            <xs:element minOccurs="0" name="extension" type="tns:extension"/>
+            <xs:element minOccurs="0" name="extension" type="tns:parameterExtension"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="depositfloat">
@@ -183,7 +179,7 @@
             <xs:element minOccurs="0" name="orginatingpartnerbalanceafter" type="xs:string"/>
             <xs:element minOccurs="0" name="destinationpartnerbalanceafter" type="xs:string"/>
             <xs:element minOccurs="0" name="financialtransactionid" type="xs:string"/>
-            <xs:element minOccurs="0" name="extension" type="tns:extension"/>
+            <xs:element minOccurs="0" name="extension" type="tns:parameterExtension"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="cashoutrequest">
@@ -207,7 +203,7 @@
             <xs:element minOccurs="0" name="orginatingpartnerbalanceafter" type="xs:string"/>
             <xs:element minOccurs="0" name="destinationpartnerbalanceafter" type="xs:string"/>
             <xs:element minOccurs="0" name="financialtransactionid" type="xs:string"/>
-            <xs:element minOccurs="0" name="extension" type="tns:extension"/>
+            <xs:element minOccurs="0" name="parameter" type="tns:parameterExtension"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="cashinrequest">
@@ -231,7 +227,7 @@
             <xs:element minOccurs="0" name="orginatingresourcebalanceafter" type="xs:string"/>
             <xs:element minOccurs="0" name="destinationresourcebalanceafter" type="xs:string"/>
             <xs:element minOccurs="0" name="financialtransactionid" type="xs:string"/>
-            <xs:element minOccurs="0" name="extension" type="tns:extension"/>
+            <xs:element minOccurs="0" name="extension" type="tns:parameterExtension"/>
         </xs:sequence>
     </xs:complexType>
     <xs:simpleType name="entryType">
