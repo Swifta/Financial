@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="financials" targetNamespace="http://swifta.com/sub/mats/operation/financial/v1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://swifta.com/sub/mats/operation/financial/v1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://swifta.com/sub/mats/operation/financial/v1.0" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://swifta.com/sub/mats/operation/financial/v1.0">
+    <xs:element name="adjustaccountrequest" type="tns:adjustaccountrequest"/>
+    <xs:element name="adjustaccountrequestResponse" type="tns:adjustaccountrequestResponse"/>
+    <xs:element name="cashinrequest" type="tns:cashinrequest"/>
+    <xs:element name="cashinrequestResponse" type="tns:cashinrequestResponse"/>
+    <xs:element name="cashoutrequest" type="tns:cashoutrequest"/>
+    <xs:element name="cashoutrequestResponse" type="tns:cashoutrequestResponse"/>
+    <xs:element name="depositfloat" type="tns:depositfloat"/>
+    <xs:element name="depositfloatResponse" type="tns:depositfloatResponse"/>
+    <xs:element name="floattransferrequest" type="tns:floattransferrequest"/>
+    <xs:element name="floattransferrequestResponse" type="tns:floattransferrequestResponse"/>
+    <xs:element name="getaccounttransactionhistoryrequest" type="tns:getaccounttransactionhistoryrequest"/>
+    <xs:element name="getaccounttransactionhistoryrequestResponse" type="tns:getaccounttransactionhistoryrequestResponse"/>
+    <xs:element name="gettransactionhistoryrequest" type="tns:gettransactionhistoryrequest"/>
+    <xs:element name="gettransactionhistoryrequestResponse" type="tns:gettransactionhistoryrequestResponse"/>
+    <xs:element name="transfertobankaccountrequest" type="tns:transfertobankaccountrequest"/>
+    <xs:element name="transfertobankaccountrequestResponse" type="tns:transfertobankaccountrequestResponse"/>
+    <xs:complexType name="transfertobankaccountrequest">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="userresourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="accountresourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="amount" type="xs:string"/>
+            <xs:element minOccurs="0" name="description" type="xs:string"/>
+            <xs:element minOccurs="0" name="bankcode" type="xs:string"/>
+            <xs:element minOccurs="0" name="bankaccountnumber" type="xs:string"/>
+            <xs:element minOccurs="0" name="extension" type="tns:parameterExtension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="parameterExtension">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="mmoperator" type="xs:string"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="extension" nillable="true" type="tns:extension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="extension">
+        <xs:sequence>
+            <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##other" processContents="lax"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="transfertobankaccountrequestResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:transfertobankrequestresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="transfertobankrequestresponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="transactionid" type="xs:string"/>
+            <xs:element minOccurs="0" name="orginatingpartnerbalanceafter" type="xs:string"/>
+            <xs:element minOccurs="0" name="orginatingpartnerfee" type="xs:string"/>
+            <xs:element minOccurs="0" name="extension" type="tns:extension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getaccounttransactionhistoryrequest">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="accountresource" type="xs:string"/>
+            <xs:element minOccurs="0" name="otheraccountresource" type="xs:string"/>
+            <xs:element minOccurs="0" name="fromdate" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="todate" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="nooftransactionhistory" type="xs:string"/>
+            <xs:element minOccurs="0" name="transactionid" type="xs:string"/>
+            <xs:element minOccurs="0" name="transactionentrytype" type="tns:entryType"/>
+            <xs:element minOccurs="0" name="operationtype" type="tns:operationType"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getaccounttransactionhistoryrequestResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:getaccounttransactionhistoryresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getaccounttransactionhistoryresponse">
+        <xs:sequence>
+            <xs:element name="totalreturned" type="xs:int"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="accounttransactionhistory" nillable="true" type="tns:accountTransactionHistory"/>
+            <xs:element minOccurs="0" name="extension" type="tns:extension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="accountTransactionHistory">
+        <xs:sequence>
+            <xs:element name="transactionid" type="xs:long"/>
+            <xs:element minOccurs="0" name="orginatingresourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="destinationresourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="amount" type="xs:string"/>
+            <xs:element minOccurs="0" name="operationtype" type="tns:operationType"/>
+            <xs:element minOccurs="0" name="date" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="entrytype" type="tns:entryType"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="adjustaccountrequest">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="description" type="xs:string"/>
+            <xs:element minOccurs="0" name="adjustaccountinstruction" type="tns:adjustaccounttransactionparameters"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="adjustaccounttransactionparameters">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="orginatingresourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="destinationresourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="amount" type="xs:string"/>
+            <xs:element minOccurs="0" name="dateoftransaction" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="adjusttype" type="tns:adjustmentType"/>
+            <xs:element minOccurs="0" name="originatingresourcedescription" type="xs:string"/>
+            <xs:element minOccurs="0" name="destinationresourcedescription" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="adjustaccountrequestResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:adjustaccountresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="adjustaccountresponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="StatusCode" type="tns:statusCode"/>
+            <xs:element minOccurs="0" name="extension" type="tns:extension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="floattransferrequest">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="orginatingresourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="destinationresourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="amount" type="xs:string"/>
+            <xs:element minOccurs="0" name="sendingdescription" type="xs:string"/>
+            <xs:element minOccurs="0" name="receivingdescription" type="xs:string"/>
+            <xs:element minOccurs="0" name="extension" type="tns:parameterExtension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="floattransferrequestResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:floattransferresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="floattransferresponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="transactionid" type="xs:string"/>
+            <xs:element minOccurs="0" name="orginatingpartnerbalanceafter" type="xs:string"/>
+            <xs:element minOccurs="0" name="orginatingpartnerfee" type="xs:string"/>
+            <xs:element minOccurs="0" name="extension" type="tns:extension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="gettransactionhistoryrequest">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="transactionhistoryparameter" type="tns:gettransactionhistoryparameter"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="gettransactionhistoryparameter">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="transactionid" type="xs:string"/>
+            <xs:element minOccurs="0" name="resourceid" type="xs:string"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="testlist" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="gettransactionhistoryrequestResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:gettransactionhistoryresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="gettransactionhistoryresponse">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="accounttransactionhistory" nillable="true" type="tns:accountTransactionHistory"/>
+            <xs:element minOccurs="0" name="extension" type="tns:extension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="depositfloat">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="orginatingresourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="destinationresourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="amount" type="xs:string"/>
+            <xs:element minOccurs="0" name="sendingdescription" type="xs:string"/>
+            <xs:element minOccurs="0" name="receivingdescription" type="xs:string"/>
+            <xs:element minOccurs="0" name="extensionparameters" type="tns:parameterExtension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="depositfloatResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:depositfloatresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="depositfloatresponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="orginatingpartnerfee" type="xs:string"/>
+            <xs:element minOccurs="0" name="orginatingpartnerbalanceafter" type="xs:string"/>
+            <xs:element minOccurs="0" name="destinationpartnerbalanceafter" type="xs:string"/>
+            <xs:element minOccurs="0" name="financialtransactionid" type="xs:string"/>
+            <xs:element minOccurs="0" name="extension" type="tns:extension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="cashoutrequest">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="orginatingresourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="destinationresourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="amount" type="xs:string"/>
+            <xs:element minOccurs="0" name="sendingdescription" type="xs:string"/>
+            <xs:element minOccurs="0" name="receivingdescription" type="xs:string"/>
+            <xs:element minOccurs="0" name="extensionparameters" type="tns:parameterExtension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="cashoutrequestResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:cashoutresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="cashoutresponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="orginatingpartnerfee" type="xs:string"/>
+            <xs:element minOccurs="0" name="orginatingpartnerbalanceafter" type="xs:string"/>
+            <xs:element minOccurs="0" name="destinationpartnerbalanceafter" type="xs:string"/>
+            <xs:element minOccurs="0" name="financialtransactionid" type="xs:string"/>
+            <xs:element minOccurs="0" name="extension" type="tns:extension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="cashinrequest">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="orginatingresourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="destinationresourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="amount" type="xs:string"/>
+            <xs:element minOccurs="0" name="sendingdescription" type="xs:string"/>
+            <xs:element minOccurs="0" name="receivingdescription" type="xs:string"/>
+            <xs:element minOccurs="0" name="extensionparameters" type="tns:parameterExtension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="cashinrequestResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:cashinresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="cashinresponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="fee" type="xs:string"/>
+            <xs:element minOccurs="0" name="orginatingresourcebalanceafter" type="xs:string"/>
+            <xs:element minOccurs="0" name="destinationresourcebalanceafter" type="xs:string"/>
+            <xs:element minOccurs="0" name="financialtransactionid" type="xs:string"/>
+            <xs:element minOccurs="0" name="extension" type="tns:extension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="entryType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CREDIT"/>
+            <xs:enumeration value="DEBIT"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="operationType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CASH_IN"/>
+            <xs:enumeration value="CASH_OUT"/>
+            <xs:enumeration value="ADJUST"/>
+            <xs:enumeration value="ADJUST_FEE"/>
+            <xs:enumeration value="ADJUST_COMMISSION"/>
+            <xs:enumeration value="FLOAT_TRANSFER"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="adjustmentType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ADJUST"/>
+            <xs:enumeration value="ADJUST_FEE"/>
+            <xs:enumeration value="ADJUST_COMMISSION"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="statusCode">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="COMPLETED"/>
+            <xs:enumeration value="REJECTED"/>
+            <xs:enumeration value="PENDING"/>
+            <xs:enumeration value="FAILED"/>
+            <xs:enumeration value="CREATED"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="transfertobankaccountrequest">
+    <wsdl:part name="parameters" element="tns:transfertobankaccountrequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="gettransactionhistoryrequestResponse">
+    <wsdl:part name="parameters" element="tns:gettransactionhistoryrequestResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="transfertobankaccountrequestResponse">
+    <wsdl:part name="parameters" element="tns:transfertobankaccountrequestResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="gettransactionhistoryrequest">
+    <wsdl:part name="parameters" element="tns:gettransactionhistoryrequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="depositfloat">
+    <wsdl:part name="parameters" element="tns:depositfloat">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cashinrequestResponse">
+    <wsdl:part name="parameters" element="tns:cashinrequestResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="depositfloatResponse">
+    <wsdl:part name="parameters" element="tns:depositfloatResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="adjustaccountrequest">
+    <wsdl:part name="parameters" element="tns:adjustaccountrequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="floattransferrequest">
+    <wsdl:part name="parameters" element="tns:floattransferrequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="floattransferrequestResponse">
+    <wsdl:part name="parameters" element="tns:floattransferrequestResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cashinrequest">
+    <wsdl:part name="parameters" element="tns:cashinrequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cashoutrequestResponse">
+    <wsdl:part name="parameters" element="tns:cashoutrequestResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getaccounttransactionhistoryrequest">
+    <wsdl:part name="parameters" element="tns:getaccounttransactionhistoryrequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="adjustaccountrequestResponse">
+    <wsdl:part name="parameters" element="tns:adjustaccountrequestResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cashoutrequest">
+    <wsdl:part name="parameters" element="tns:cashoutrequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getaccounttransactionhistoryrequestResponse">
+    <wsdl:part name="parameters" element="tns:getaccounttransactionhistoryrequestResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Financial">
+    <wsdl:operation name="transfertobankaccountrequest">
+      <wsdl:input name="transfertobankaccountrequest" message="tns:transfertobankaccountrequest">
+    </wsdl:input>
+      <wsdl:output name="transfertobankaccountrequestResponse" message="tns:transfertobankaccountrequestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getaccounttransactionhistoryrequest">
+      <wsdl:input name="getaccounttransactionhistoryrequest" message="tns:getaccounttransactionhistoryrequest">
+    </wsdl:input>
+      <wsdl:output name="getaccounttransactionhistoryrequestResponse" message="tns:getaccounttransactionhistoryrequestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="adjustaccountrequest">
+      <wsdl:input name="adjustaccountrequest" message="tns:adjustaccountrequest">
+    </wsdl:input>
+      <wsdl:output name="adjustaccountrequestResponse" message="tns:adjustaccountrequestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="floattransferrequest">
+      <wsdl:input name="floattransferrequest" message="tns:floattransferrequest">
+    </wsdl:input>
+      <wsdl:output name="floattransferrequestResponse" message="tns:floattransferrequestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gettransactionhistoryrequest">
+      <wsdl:input name="gettransactionhistoryrequest" message="tns:gettransactionhistoryrequest">
+    </wsdl:input>
+      <wsdl:output name="gettransactionhistoryrequestResponse" message="tns:gettransactionhistoryrequestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="depositfloat">
+      <wsdl:input name="depositfloat" message="tns:depositfloat">
+    </wsdl:input>
+      <wsdl:output name="depositfloatResponse" message="tns:depositfloatResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cashoutrequest">
+      <wsdl:input name="cashoutrequest" message="tns:cashoutrequest">
+    </wsdl:input>
+      <wsdl:output name="cashoutrequestResponse" message="tns:cashoutrequestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cashinrequest">
+      <wsdl:input name="cashinrequest" message="tns:cashinrequest">
+    </wsdl:input>
+      <wsdl:output name="cashinrequestResponse" message="tns:cashinrequestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="financialsSoapBinding" type="tns:Financial">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getaccounttransactionhistoryrequest">
+      <soap:operation soapAction="getaccounttransactionhistoryrequest" style="document"/>
+      <wsdl:input name="getaccounttransactionhistoryrequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getaccounttransactionhistoryrequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="transfertobankaccountrequest">
+      <soap:operation soapAction="transfertobankaccountrequest" style="document"/>
+      <wsdl:input name="transfertobankaccountrequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="transfertobankaccountrequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="adjustaccountrequest">
+      <soap:operation soapAction="adjustaccountrequest" style="document"/>
+      <wsdl:input name="adjustaccountrequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="adjustaccountrequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="floattransferrequest">
+      <soap:operation soapAction="floattransferrequest" style="document"/>
+      <wsdl:input name="floattransferrequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="floattransferrequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gettransactionhistoryrequest">
+      <soap:operation soapAction="gettransactionhistoryrequest" style="document"/>
+      <wsdl:input name="gettransactionhistoryrequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="gettransactionhistoryrequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="depositfloat">
+      <soap:operation soapAction="cashoutrequest" style="document"/>
+      <wsdl:input name="depositfloat">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="depositfloatResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cashinrequest">
+      <soap:operation soapAction="cashinrequest" style="document"/>
+      <wsdl:input name="cashinrequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cashinrequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cashoutrequest">
+      <soap:operation soapAction="cashoutrequest" style="document"/>
+      <wsdl:input name="cashoutrequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cashoutrequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="financials">
+    <wsdl:port name="FinancialPort" binding="tns:financialsSoapBinding">
+      <soap:address location="http://localhost:9090/FinancialPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
