@@ -10,7 +10,7 @@ package com.swifta.sub.mats.operation.data;
 
 public class DataServiceFault extends java.lang.Exception{
 
-    private static final long serialVersionUID = 1416140326299L;
+    private static final long serialVersionUID = 1416147914812L;
     
     private com.swifta.sub.mats.operation.data.MatsdataserviceStub.DataServiceFault faultMessage;
 

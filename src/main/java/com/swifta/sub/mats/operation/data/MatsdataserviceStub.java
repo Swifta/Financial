@@ -6449,6 +6449,36 @@
 
                                }
                             
+
+                        /**
+                        * field for Msisdn
+                        */
+
+                        
+                                    protected java.lang.String localMsisdn ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getMsisdn(){
+                               return localMsisdn;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Msisdn
+                               */
+                               public void setMsisdn(java.lang.String param){
+                            
+                                            this.localMsisdn=param;
+                                    
+
+                               }
+                            
      
 
      
@@ -6589,6 +6619,24 @@
 
                                         
                                                    xmlWriter.writeCharacters(localResult);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
+                                    namespace = "http://swifta.com/sub/mats/operation/data";
+                                    writeStartElement(null, namespace, "Msisdn", xmlWriter);
+                             
+
+                                          if (localMsisdn==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localMsisdn);
                                             
                                           }
                                     
@@ -6804,6 +6852,12 @@
                                          elementList.add(localResult==null?null:
                                          org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localResult));
                                     
+                                      elementList.add(new javax.xml.namespace.QName("http://swifta.com/sub/mats/operation/data",
+                                                                      "Msisdn"));
+                                 
+                                         elementList.add(localMsisdn==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localMsisdn));
+                                    
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
             
@@ -7009,6 +7063,35 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setResult(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://swifta.com/sub/mats/operation/data","Msisdn").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setMsisdn(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                             
                                        } else {
@@ -17130,6 +17213,36 @@
 
                                }
                             
+
+                        /**
+                        * field for Msisdn
+                        */
+
+                        
+                                    protected java.lang.String localMsisdn ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getMsisdn(){
+                               return localMsisdn;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Msisdn
+                               */
+                               public void setMsisdn(java.lang.String param){
+                            
+                                            this.localMsisdn=param;
+                                    
+
+                               }
+                            
      
 
      
@@ -17221,6 +17334,24 @@
 
                                         
                                                    xmlWriter.writeCharacters(localStatus);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
+                                    namespace = "http://swifta.com/sub/mats/operation/data";
+                                    writeStartElement(null, namespace, "Msisdn", xmlWriter);
+                             
+
+                                          if (localMsisdn==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localMsisdn);
                                             
                                           }
                                     
@@ -17418,6 +17549,12 @@
                                          elementList.add(localStatus==null?null:
                                          org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localStatus));
                                     
+                                      elementList.add(new javax.xml.namespace.QName("http://swifta.com/sub/mats/operation/data",
+                                                                      "Msisdn"));
+                                 
+                                         elementList.add(localMsisdn==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localMsisdn));
+                                    
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
             
@@ -17534,6 +17671,35 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setStatus(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://swifta.com/sub/mats/operation/data","Msisdn").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setMsisdn(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                             
                                        } else {
