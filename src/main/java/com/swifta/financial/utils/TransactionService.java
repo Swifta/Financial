@@ -94,8 +94,18 @@ public class TransactionService {
 		cashoutresponse.setDestinationpartnerbalanceafter(spCashoutResponse
 				.getDestinationpartnerbalanceafter());
 
-		// VALIDATE THIS CODE WITH MODUPE
-		// ======>>>>>cashoutresponse.setExtension(spCashoutResponse.getExtensionparameters());
+		com.swifta.subsidiary.mats.serviceprovider.operation.spfinancial.v1_0.SpfinancialsStub.ParameterExtension spPe = new com.swifta.subsidiary.mats.serviceprovider.operation.spfinancial.v1_0.SpfinancialsStub.ParameterExtension();
+		ParameterExtension pe = new ParameterExtension();
+		spPe = spCashoutResponse.getExtensionparameters();
+		if (spPe != null) {
+			pe.setMmoperator(spPe.getMmoperator());
+			pe.setSpTransactionid(spPe.getSpTransactionid());
+			for (String paramValue : spPe.getExtensionparam()) {
+				pe.getExtensionparam().add(paramValue);
+			}
+		}
+		cashoutresponse.setParameter(pe);
+
 		cashoutresponse.setFinancialtransactionid(spCashoutResponse
 				.getFinancialtransactionid());
 		cashoutresponse.setOrginatingpartnerbalanceafter(spCashoutResponse
@@ -129,7 +139,7 @@ public class TransactionService {
 			String sendingdescription, String receivingdescription,
 			ParameterExtension extensionparameters) {
 		logger.info("----------------------initiate Depositfloatresponse");
-		return transactionEngineService.initiateDepositFloat(
+		return transactionEngineService.depositFloatUpdate(
 				orginatingresourceid, destinationresourceid, amount,
 				sendingdescription, receivingdescription, extensionparameters);
 
@@ -192,9 +202,19 @@ public class TransactionService {
 		logger.info("---------------------- after instantiating  Cashoutresponse");
 		cashinresponse.setDestinationresourcebalanceafter(spCashinResponse
 				.getDestinationpartnerbalanceafter());
+		com.swifta.subsidiary.mats.serviceprovider.operation.spfinancial.v1_0.SpfinancialsStub.ParameterExtension spPe = new com.swifta.subsidiary.mats.serviceprovider.operation.spfinancial.v1_0.SpfinancialsStub.ParameterExtension();
+		ParameterExtension pe = new ParameterExtension();
+		spPe = spCashinResponse.getExtensionparameters();
+		if (spPe != null) {
+			pe.setMmoperator(spPe.getMmoperator());
+			pe.setSpTransactionid(spPe.getSpTransactionid());
+			for (String paramValue : spPe.getExtensionparam()) {
+				pe.getExtensionparam().add(paramValue);
+			}
+		}
 
-		// VALIDATE THIS CODE WITH MODUPE
-		// ======>>>>>cashinresponse.setExtension(spCashoutResponse.getExtensionparameters());
+		cashinresponse.setExtension(pe);
+
 		cashinresponse.setFinancialtransactionid(spCashinResponse
 				.getFinancialtransactionid());
 		cashinresponse.setOrginatingresourcebalanceafter(spCashinResponse

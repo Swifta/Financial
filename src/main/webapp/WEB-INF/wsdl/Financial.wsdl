@@ -426,7 +426,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="depositfloat">
-      <soap:operation soapAction="cashoutrequest" style="document"/>
+      <soap:operation soapAction="depositfloat" style="document"/>
       <wsdl:input name="depositfloat">
         <soap:body use="literal"/>
       </wsdl:input>
