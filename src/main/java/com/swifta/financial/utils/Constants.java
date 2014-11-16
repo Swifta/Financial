@@ -5,4 +5,6 @@ public class Constants {
 	public static int DEPOSITFLOAT_TRANSACTIONTYPEID = 1;
 	public static int TRANSACTIONID = -1;
 	public static int PENDING_STATUS = 1;
+
+	public static String DEPOSITFLOAT_CHANNEL = "NONE";
 }

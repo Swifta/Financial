@@ -80,17 +80,12 @@ public class TransactionEngineService {
 
 	}
 
-	public boolean initiateCashin() {
-		boolean status = false;
-		logger.info("----------------------initiate cash in");
-		return status;
-	}
-
 	public Depositfloatresponse depositFloatUpdate(String orginatingresourceid,
 			String destinationresourceid, String amount,
 			String sendingdescription, String receivingdescription,
 			ParameterExtension extensionparameters) {
 		boolean status = false;
+		String statusMessage = "";
 		logger.info("----------------------update cash in");
 		DepositFloatUpdate depositFloatUpdate = new DepositFloatUpdate();
 		depositFloatUpdate.setAmount(amount);
@@ -134,6 +129,7 @@ public class TransactionEngineService {
 					} else {
 						logger.info("----------------------Response is not ACCOUNT_TRXN_SET_TO_PENDING");
 					}
+					statusMessage = debitfloatInsertresponse.getStatusMessage();
 				}
 			} else {
 				logger.info("----------------------debitFloatInsertresponses is not null");
@@ -142,13 +138,28 @@ public class TransactionEngineService {
 			logger.info("----------------------debitFloatinsertresponsesE is not null");
 		}
 		Depositfloatresponse depositFloatResponse = new Depositfloatresponse();
-		depositFloatResponse.setDestinationpartnerbalanceafter("");
-		// depositFloatResponse.setExtension();
+		depositFloatResponse.setDestinationpartnerbalanceafter(amount);
+
+		ParameterExtension pe = new ParameterExtension();
+		pe.setMmoperator(Constants.DEPOSITFLOAT_CHANNEL);
+		pe.setSpTransactionid(String.valueOf(depositFloatUpdate
+				.getTransactionid()));
+		pe.getExtensionparam().add(statusMessage);
+		pe.getExtensionparam().add(String.valueOf(status));
+
+		depositFloatResponse.setExtension(pe);
 		depositFloatResponse.setFinancialtransactionid(String
 				.valueOf(depositFloatUpdate.getTransactionid()));
-		depositFloatResponse.setOrginatingpartnerbalanceafter("");
+		depositFloatResponse.setOrginatingpartnerbalanceafter(amount);
 		depositFloatResponse.setOrginatingpartnerfee("");
+
 		return depositFloatResponse;
+	}
+
+	public boolean initiateCashin() {
+		boolean status = false;
+		logger.info("----------------------initiate cash in");
+		return status;
 	}
 
 	public boolean initiateCashout() {
