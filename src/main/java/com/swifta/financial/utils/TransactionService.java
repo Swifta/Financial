@@ -52,7 +52,12 @@ public class TransactionService {
 			String sendingdescription, String receivingdescription,
 			ParameterExtension extensionparameters) {
 		logger.info("----------------------initiate Cashoutresponse");
-		transactionEngineService.initiateCashout();
+		TransactionDetail transactionDetail = new TransactionDetail(
+				orginatingresourceid, destinationresourceid, amount,
+				sendingdescription, receivingdescription, extensionparameters);
+
+		transactionDetail = transactionEngineService
+				.initiateCashout(transactionDetail);
 
 		logger.info("----------------------before instantiating cashoutrequestE");
 		Cashoutrequest cashoutrequest = new Cashoutrequest();
@@ -100,6 +105,7 @@ public class TransactionService {
 		if (spPe != null) {
 			pe.setMmoperator(spPe.getMmoperator());
 			pe.setSpTransactionid(spPe.getSpTransactionid());
+			transactionDetail.setExternalTransactionId(pe.getSpTransactionid());
 			for (String paramValue : spPe.getExtensionparam()) {
 				pe.getExtensionparam().add(paramValue);
 			}
@@ -113,7 +119,7 @@ public class TransactionService {
 		cashoutresponse.setOrginatingpartnerfee(spCashoutResponse
 				.getOrginatingpartnerfee());
 		logger.info("---------------------- update Cashout");
-		transactionEngineService.updateCashout();
+		transactionEngineService.updateCashout(transactionDetail);
 		logger.info("---------------------- after update Cashout");
 		return cashoutresponse;
 	}
@@ -221,7 +227,7 @@ public class TransactionService {
 				.getOrginatingpartnerbalanceafter());
 		cashinresponse.setFee(spCashinResponse.getFee());
 		logger.info("---------------------- update Cashin");
-		transactionEngineService.updateCashout();
+		transactionEngineService.updateCashin();
 		logger.info("---------------------- after update Cashin");
 		return cashinresponse;
 
