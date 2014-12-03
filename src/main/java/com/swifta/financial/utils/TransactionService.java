@@ -106,7 +106,12 @@ public class TransactionService {
 			pe.setMmoperator(spPe.getMmoperator());
 			pe.setSpTransactionid(spPe.getSpTransactionid());
 			transactionDetail.setExternalTransactionId(pe.getSpTransactionid());
+			int count = 1;
 			for (String paramValue : spPe.getExtensionparam()) {
+				if (count == 1) {
+					transactionDetail.setExternalStatusCode(paramValue);
+				}
+				count++;
 				pe.getExtensionparam().add(paramValue);
 			}
 		}

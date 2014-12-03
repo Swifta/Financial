@@ -16,8 +16,9 @@ public class Constants {
 	public static int CHECKBALANCE_TRANSACTIONTYPE = 6;
 	public static int MONEYTRANSFERS_TRANSACTIONTYPE = 7;
 
+	public static int MOBILE_CHANNEL = 2;
+
 	public static String DEPOSITFLOAT_CHANNEL = "NONE";
-	public static String MOBILE_CHANNEL = "2";
 	public static String TRANSACTIONID = "-1";
 
 }

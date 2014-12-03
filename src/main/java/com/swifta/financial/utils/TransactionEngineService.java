@@ -5,16 +5,19 @@ import java.util.logging.Logger;
 
 import com.swifta.sub.mats.operation.data.DataServiceFault;
 import com.swifta.sub.mats.operation.data.MatsdataserviceStub;
-import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Cashoutinsert;
-import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Cashoutresponse;
-import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Cashoutresponses;
-import com.swifta.sub.mats.operation.data.MatsdataserviceStub.CashoutresponsesE;
-import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Cashoutupdate;
+import com.swifta.sub.mats.operation.data.MatsdataserviceStub.CompleteTransaction;
 import com.swifta.sub.mats.operation.data.MatsdataserviceStub.DebitfloatInsertresponse;
 import com.swifta.sub.mats.operation.data.MatsdataserviceStub.DebitfloatInsertresponses;
 import com.swifta.sub.mats.operation.data.MatsdataserviceStub.DebitfloatInsertresponsesE;
 import com.swifta.sub.mats.operation.data.MatsdataserviceStub.DepositFloatUpdate;
 import com.swifta.sub.mats.operation.data.MatsdataserviceStub.DepositFloatinsert;
+import com.swifta.sub.mats.operation.data.MatsdataserviceStub.InitializeTransaction;
+import com.swifta.sub.mats.operation.data.MatsdataserviceStub.InitializeTransactionresponse;
+import com.swifta.sub.mats.operation.data.MatsdataserviceStub.InitializeTransactionresponses;
+import com.swifta.sub.mats.operation.data.MatsdataserviceStub.InitializeTransactionresponsesE;
+import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Transactionresponse;
+import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Transactionresponses;
+import com.swifta.sub.mats.operation.data.MatsdataserviceStub.TransactionresponsesE;
 import com.swifta.sub.mats.operation.financial.v1.Depositfloatresponse;
 import com.swifta.sub.mats.operation.financial.v1.ParameterExtension;
 import com.swifta.sub.mats.operation.financial.v1.StatusCode;
@@ -101,7 +104,8 @@ public class TransactionEngineService {
 		depositFloatUpdate.setReceivinguserresourceid(destinationresourceid);
 		depositFloatUpdate.setSendinguserresourceid(orginatingresourceid);
 		depositFloatUpdate.setStatusMessage(StatusCode.COMPLETED.toString());
-		depositFloatUpdate.setTransactionchannelid(Constants.MOBILE_CHANNEL);
+		depositFloatUpdate.setTransactionchannelid(String
+				.valueOf(Constants.MOBILE_CHANNEL));
 		depositFloatUpdate.setTransactionid(Constants.TRANSACTIONID);
 		depositFloatUpdate.setTransactiontypeid(String
 				.valueOf(Constants.DEPOSITFLOAT_TRANSACTIONTYPEID));
@@ -180,30 +184,36 @@ public class TransactionEngineService {
 
 	public TransactionDetail initiateCashout(TransactionDetail transactionDetail) {
 		logger.info("----------------------initiate cash out insert");
-		Cashoutinsert cashoutinsert = new Cashoutinsert();
-		cashoutinsert.setAmount(transactionDetail.getAmount());
-		cashoutinsert.setFrommessage(transactionDetail.getSenderDescription());
+		InitializeTransaction initializeTransaction = new InitializeTransaction();
+		initializeTransaction.setAmount(Double.valueOf(transactionDetail
+				.getAmount()));
+		initializeTransaction.setFrommessage(transactionDetail
+				.getSenderDescription());
 		// cashoutinsert.setIexternaltransactionid(param);
-		cashoutinsert
-				.setReceivinguserresourceid(transactionDetail.getAgentId());
-		cashoutinsert.setSendinguserresourceid(transactionDetail.getSender());
-		cashoutinsert.setStatusMessage(Constants.PENDING_VALUE);
-		cashoutinsert.setTomessage(transactionDetail.getRecieverDescription());
-		cashoutinsert.setTransactionchannelid(Integer
+		initializeTransaction.setReceivinguserresourceid(transactionDetail
+				.getAgentId());
+		initializeTransaction.setSendinguserresourceid(transactionDetail
+				.getSender());
+		initializeTransaction.setStatusMessage(Constants.PENDING_VALUE);
+		initializeTransaction.setTomessage(transactionDetail
+				.getRecieverDescription());
+		initializeTransaction.setTransactionchannelid(Integer
 				.valueOf(Constants.MOBILE_CHANNEL));
-		cashoutinsert
-				.setTransactionid(Integer.valueOf(Constants.TRANSACTIONID));
-		cashoutinsert.setTransactionIdE(Constants.TRANSACTIONID);
-		cashoutinsert.setTransactionstatusid(Constants.PENDING_STATUS);
-		cashoutinsert.setTransactiontypeid(String
+		initializeTransaction.setTransactionid(Integer
+				.valueOf(Constants.TRANSACTIONID));
+		initializeTransaction.setTransactionIdE(Constants.TRANSACTIONID);
+		initializeTransaction.setTransactionstatusid(Constants.PENDING_STATUS);
+		initializeTransaction.setTransactiontypeid(String
 				.valueOf(Constants.CASHOUT_TRANSACTIONTYPE));
 		logger.info("----------------------initiate cash out response");
-		CashoutresponsesE cashoutResponsesE = new CashoutresponsesE();
+		InitializeTransactionresponsesE initializeTransactionResponsesE = new InitializeTransactionresponsesE();
+
 		logger.info("----------------------initiate cash out stub");
 		try {
 			matsStub = new MatsdataserviceStub();
 			logger.info("----------------------before making stub call");
-			cashoutResponsesE = matsStub.cashoutinsert(cashoutinsert);
+			initializeTransactionResponsesE = matsStub
+					.initializeTransaction(initializeTransaction);
 			logger.info("----------------------after stub call");
 		} catch (RemoteException e) {
 			logger.info("----------------------Remote Exception");
@@ -215,16 +225,27 @@ public class TransactionEngineService {
 			e.printStackTrace();
 		}
 		logger.info("----------------------after getting feedback from insert");
-		Cashoutresponses cashoutResponses = cashoutResponsesE
-				.getCashoutresponses();
-		logger.info("----------------------after getting feedback from cashoutresponses");
-		Cashoutresponse[] cashoutResponseArray = cashoutResponses
-				.getCashoutresponse();
-		for (Cashoutresponse cashoutResponse : cashoutResponseArray) {
-			transactionDetail.setInitialMessageStatus(cashoutResponse
-					.getStatusMessage());
-			transactionDetail.setTransactionId(cashoutResponse
-					.getTransactionId());
+		if (initializeTransactionResponsesE != null) {
+			logger.info("----------------------initializeTransactionResponsesE is not null");
+			InitializeTransactionresponses initializeTransactionresponses = initializeTransactionResponsesE
+					.getInitializeTransactionresponses();
+			logger.info("----------------------after getting feedback from cashoutresponses");
+			if (initializeTransactionresponses != null) {
+				logger.info("----------------------initializeTransactionresponses is not null");
+				InitializeTransactionresponse[] initializeTransactionresponseArray = initializeTransactionresponses
+						.getInitializeTransactionresponse();
+				for (InitializeTransactionresponse initializeResponse : initializeTransactionresponseArray) {
+					transactionDetail
+							.setInitialMessageStatus(initializeResponse
+									.getStatusMessage());
+					transactionDetail.setTransactionId(Integer
+							.valueOf(initializeResponse.getTransactionId()));
+				}
+			} else {
+				logger.info("----------------------initializeTransactionresponses is  null");
+			}
+		} else {
+			logger.info("----------------------initializeTransactionResponsesE is null");
 		}
 		return transactionDetail;
 	}
@@ -232,24 +253,32 @@ public class TransactionEngineService {
 	public TransactionDetail updateCashout(TransactionDetail transactionDetail) {
 		boolean status = false;
 		logger.info("----------------------update cash out");
-		Cashoutupdate cashoutupdate = new Cashoutupdate();
-		cashoutupdate.setAmount(transactionDetail.getAmount());
-		cashoutupdate
-				.setReceivinguserresourceid(transactionDetail.getAgentId());
-		cashoutupdate.setSendingmsisdn(transactionDetail.getSender());
-		cashoutupdate.setSendinguserresourceid(transactionDetail.getSender());
-		cashoutupdate.setStatusMessage(Constants.COMPLETE_VALUE);
-		cashoutupdate.setTransactionchannelid(Constants.MOBILE_CHANNEL);
-		cashoutupdate.setTransactionid(transactionDetail
+		CompleteTransaction completeTransaction = new CompleteTransaction();
+		completeTransaction.setAmount(Double.valueOf(transactionDetail
+				.getAmount()));
+		completeTransaction.setExternalstatuscode(transactionDetail
+				.getExternalStatusCode());
+		completeTransaction.setExternaltransactionid(transactionDetail
 				.getExternalTransactionId());
-		cashoutupdate.setTransactiontypeid(String
+		completeTransaction.setReceivinguserresourceid(transactionDetail
+				.getAgentId());
+		completeTransaction.setSendingmsisdn(transactionDetail.getSender());
+		completeTransaction.setSendinguserresourceid(transactionDetail
+				.getSender());
+		completeTransaction.setStatusMessage(Constants.COMPLETE_VALUE);
+		completeTransaction.setTransactionchannelid(Constants.MOBILE_CHANNEL);
+		completeTransaction.setTransactionid(transactionDetail
+				.getTransactionId());
+		// completeTransaction.setTransactionstatusid(param);
+		completeTransaction.setTransactiontypeid(String
 				.valueOf(Constants.CASHOUT_TRANSACTIONTYPE));
 
-		CashoutresponsesE cashoutResponsesE = new CashoutresponsesE();
+		TransactionresponsesE transactionresponsesE = new TransactionresponsesE();
 		try {
 			matsStub = new MatsdataserviceStub();
 			logger.info("----------------------before making stub call");
-			cashoutResponsesE = matsStub.cashoutupdate(cashoutupdate);
+			transactionresponsesE = matsStub
+					.completeTransaction(completeTransaction);
 			logger.info("----------------------after stub call");
 		} catch (RemoteException e) {
 			logger.info("----------------------Remote Exception");
@@ -261,15 +290,26 @@ public class TransactionEngineService {
 			e.printStackTrace();
 		}
 		logger.info("----------------------after getting feedback from insert");
-		Cashoutresponses cashoutResponses = cashoutResponsesE
-				.getCashoutresponses();
-		logger.info("----------------------after getting feedback from cashoutresponses");
-		Cashoutresponse[] cashoutResponseArray = cashoutResponses
-				.getCashoutresponse();
-		for (Cashoutresponse cashoutResponse : cashoutResponseArray) {
-			transactionDetail.setUpdateMessageStatus(cashoutResponse
-					.getStatusMessage());
-			cashoutResponse.getTransactionId();
+		if (transactionresponsesE != null) {
+			logger.info("----------------------transactionresponsesE is not null");
+			Transactionresponses transactionresponses = transactionresponsesE
+					.getTransactionresponses();
+			logger.info("----------------------after getting feedback from cashoutresponses");
+			if (transactionresponses != null) {
+				logger.info("----------------------transactionresponses is not null");
+				Transactionresponse[] transactionResponseArray = transactionresponses
+						.getTransactionresponse();
+				for (Transactionresponse transactionResponse : transactionResponseArray) {
+					transactionDetail
+							.setUpdateMessageStatus(transactionResponse
+									.getStatusMessage());
+				}
+			} else {
+				logger.info("----------------------transactionresponses is null");
+			}
+		} else {
+			logger.info("----------------------transactionresponsesE is null");
+
 		}
 		return transactionDetail;
 	}

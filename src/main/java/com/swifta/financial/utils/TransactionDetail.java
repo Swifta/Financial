@@ -13,8 +13,9 @@ public class TransactionDetail {
 	private String agentId;
 	private String agentPin;
 	private String mmo;
-	private String transactionId;
+	private int transactionId;
 	private String externalTransactionId;
+	private String externalStatusCode;
 	private String initialMessageStatus;
 	private String updateMessageStatus;
 
@@ -29,7 +30,8 @@ public class TransactionDetail {
 
 		if (extensionparameters != null) {
 			this.mmo = extensionparameters.getMmoperator();
-			this.transactionId = extensionparameters.getSpTransactionid();
+			this.transactionId = Integer.valueOf(extensionparameters
+					.getSpTransactionid());
 
 			List<String> parameterList = extensionparameters
 					.getExtensionparam();
@@ -103,11 +105,11 @@ public class TransactionDetail {
 		this.mmo = mmo;
 	}
 
-	public String getTransactionId() {
+	public int getTransactionId() {
 		return transactionId;
 	}
 
-	public void setTransactionId(String transactionId) {
+	public void setTransactionId(int transactionId) {
 		this.transactionId = transactionId;
 	}
 
@@ -133,6 +135,14 @@ public class TransactionDetail {
 
 	public void setUpdateMessageStatus(String updateMessageStatus) {
 		this.updateMessageStatus = updateMessageStatus;
+	}
+
+	public String getExternalStatusCode() {
+		return externalStatusCode;
+	}
+
+	public void setExternalStatusCode(String externalStatusCode) {
+		this.externalStatusCode = externalStatusCode;
 	}
 
 }
