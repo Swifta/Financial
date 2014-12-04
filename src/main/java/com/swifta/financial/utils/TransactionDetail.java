@@ -18,6 +18,8 @@ public class TransactionDetail {
 	private String externalStatusCode;
 	private String initialMessageStatus;
 	private String updateMessageStatus;
+	private double serviceFee;
+	private double serviceCommission;
 
 	public TransactionDetail(String sender, String reciever, String amount,
 			String senderDescription, String recieverDescription,
@@ -143,6 +145,22 @@ public class TransactionDetail {
 
 	public void setExternalStatusCode(String externalStatusCode) {
 		this.externalStatusCode = externalStatusCode;
+	}
+
+	public double getServiceFee() {
+		return serviceFee;
+	}
+
+	public void setServiceFee(double serviceFee) {
+		this.serviceFee = serviceFee;
+	}
+
+	public double getServiceCommission() {
+		return serviceCommission;
+	}
+
+	public void setServiceCommission(double serviceCommission) {
+		this.serviceCommission = serviceCommission;
 	}
 
 }

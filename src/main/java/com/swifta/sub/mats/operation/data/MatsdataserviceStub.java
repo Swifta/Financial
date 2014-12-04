@@ -11835,6 +11835,66 @@
                             
 
                         /**
+                        * field for Servicefee
+                        */
+
+                        
+                                    protected java.lang.String localServicefee ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getServicefee(){
+                               return localServicefee;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Servicefee
+                               */
+                               public void setServicefee(java.lang.String param){
+                            
+                                            this.localServicefee=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Servicecommission
+                        */
+
+                        
+                                    protected java.lang.String localServicecommission ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getServicecommission(){
+                               return localServicecommission;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Servicecommission
+                               */
+                               public void setServicecommission(java.lang.String param){
+                            
+                                            this.localServicecommission=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for StatusMessage
                         */
 
@@ -11936,6 +11996,42 @@
 
                                         
                                                    xmlWriter.writeCharacters(localSendingmsisdn);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
+                                    namespace = "http://swifta.com/sub/mats/operation/data";
+                                    writeStartElement(null, namespace, "servicefee", xmlWriter);
+                             
+
+                                          if (localServicefee==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localServicefee);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
+                                    namespace = "http://swifta.com/sub/mats/operation/data";
+                                    writeStartElement(null, namespace, "servicecommission", xmlWriter);
+                             
+
+                                          if (localServicecommission==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localServicecommission);
                                             
                                           }
                                     
@@ -12146,6 +12242,18 @@
                                          org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSendingmsisdn));
                                     
                                       elementList.add(new javax.xml.namespace.QName("http://swifta.com/sub/mats/operation/data",
+                                                                      "servicefee"));
+                                 
+                                         elementList.add(localServicefee==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localServicefee));
+                                    
+                                      elementList.add(new javax.xml.namespace.QName("http://swifta.com/sub/mats/operation/data",
+                                                                      "servicecommission"));
+                                 
+                                         elementList.add(localServicecommission==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localServicecommission));
+                                    
+                                      elementList.add(new javax.xml.namespace.QName("http://swifta.com/sub/mats/operation/data",
                                                                       "StatusMessage"));
                                  
                                          elementList.add(localStatusMessage==null?null:
@@ -12238,6 +12346,64 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setSendingmsisdn(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://swifta.com/sub/mats/operation/data","servicefee").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setServicefee(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://swifta.com/sub/mats/operation/data","servicecommission").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setServicecommission(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                             
                                        } else {
@@ -30235,6 +30401,66 @@
                             
 
                         /**
+                        * field for Servicefee
+                        */
+
+                        
+                                    protected java.lang.String localServicefee ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getServicefee(){
+                               return localServicefee;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Servicefee
+                               */
+                               public void setServicefee(java.lang.String param){
+                            
+                                            this.localServicefee=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Servicecommission
+                        */
+
+                        
+                                    protected java.lang.String localServicecommission ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getServicecommission(){
+                               return localServicecommission;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Servicecommission
+                               */
+                               public void setServicecommission(java.lang.String param){
+                            
+                                            this.localServicecommission=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for StatusMessage
                         */
 
@@ -30478,6 +30704,42 @@
 
                                         
                                                    xmlWriter.writeCharacters(localSendingmsisdn);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
+                                    namespace = "http://swifta.com/sub/mats/operation/data";
+                                    writeStartElement(null, namespace, "servicefee", xmlWriter);
+                             
+
+                                          if (localServicefee==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localServicefee);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
+                                    namespace = "http://swifta.com/sub/mats/operation/data";
+                                    writeStartElement(null, namespace, "servicecommission", xmlWriter);
+                             
+
+                                          if (localServicecommission==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localServicecommission);
                                             
                                           }
                                     
@@ -30740,6 +31002,18 @@
                                  
                                          elementList.add(localSendingmsisdn==null?null:
                                          org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSendingmsisdn));
+                                    
+                                      elementList.add(new javax.xml.namespace.QName("http://swifta.com/sub/mats/operation/data",
+                                                                      "servicefee"));
+                                 
+                                         elementList.add(localServicefee==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localServicefee));
+                                    
+                                      elementList.add(new javax.xml.namespace.QName("http://swifta.com/sub/mats/operation/data",
+                                                                      "servicecommission"));
+                                 
+                                         elementList.add(localServicecommission==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localServicecommission));
                                     
                                       elementList.add(new javax.xml.namespace.QName("http://swifta.com/sub/mats/operation/data",
                                                                       "StatusMessage"));
@@ -31103,6 +31377,64 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setSendingmsisdn(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://swifta.com/sub/mats/operation/data","servicefee").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setServicefee(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://swifta.com/sub/mats/operation/data","servicecommission").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setServicecommission(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                             
                                        } else {

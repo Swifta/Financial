@@ -303,6 +303,12 @@ public class TransactionEngineService {
 					transactionDetail
 							.setUpdateMessageStatus(transactionResponse
 									.getStatusMessage());
+					transactionDetail.setServiceFee(Double
+							.valueOf(transactionResponse.getServicefee()));
+					transactionDetail
+							.setServiceCommission(Double
+									.valueOf(transactionResponse
+											.getServicecommission()));
 				}
 			} else {
 				logger.info("----------------------transactionresponses is null");
