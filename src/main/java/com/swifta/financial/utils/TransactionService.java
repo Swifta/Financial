@@ -78,6 +78,9 @@ public class TransactionService {
 		CashoutrequestResponseE cashoutResponseE = null;
 		try {
 			logger.info("----------------------before instantiating stub");
+			long timeOutInMilliSeconds = (5 * 36 * 1000);
+			spFinancialStub._getServiceClient().getOptions()
+					.setTimeOutInMilliSeconds(timeOutInMilliSeconds);
 			spFinancialStub = new SpfinancialsStub();
 			logger.info("----------------------After instantiation of stub");
 			cashoutResponseE = spFinancialStub.cashoutrequest(cashoutrequestE);
@@ -110,6 +113,13 @@ public class TransactionService {
 			for (String paramValue : spPe.getExtensionparam()) {
 				if (count == 1) {
 					transactionDetail.setExternalStatusCode(paramValue);
+				}
+				if (count == 2) {
+					transactionDetail.setExternalStatusMessage(paramValue);
+				}
+				if (count == 3) {
+					transactionDetail.setTransactionComplete(Boolean
+							.valueOf(paramValue));
 				}
 				count++;
 				pe.getExtensionparam().add(paramValue);
@@ -193,6 +203,9 @@ public class TransactionService {
 		CashinrequestResponseE cashinResponseE = null;
 		try {
 			logger.info("----------------------before instantiating stub");
+			long timeOutInMilliSeconds = (5 * 36 * 1000);
+			spFinancialStub._getServiceClient().getOptions()
+					.setTimeOutInMilliSeconds(timeOutInMilliSeconds);
 			spFinancialStub = new SpfinancialsStub();
 			logger.info("----------------------After instantiation of stub");
 			cashinResponseE = spFinancialStub.cashinrequest(cashinrequestE);

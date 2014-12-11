@@ -114,6 +114,7 @@ public class TransactionEngineService {
 		try {
 			matsStub = new MatsdataserviceStub();
 			logger.info("----------------------before making stub call");
+
 			debitFloatinsertresponsesE = matsStub
 					.depositFloatUpdate(depositFloatUpdate);
 			logger.info("----------------------after stub call");
@@ -212,6 +213,9 @@ public class TransactionEngineService {
 		try {
 			matsStub = new MatsdataserviceStub();
 			logger.info("----------------------before making stub call");
+			long timeOutInMilliSeconds = (5 * 36 * 1000);
+			matsStub._getServiceClient().getOptions()
+					.setTimeOutInMilliSeconds(timeOutInMilliSeconds);
 			initializeTransactionResponsesE = matsStub
 					.initializeTransaction(initializeTransaction);
 			logger.info("----------------------after stub call");
@@ -235,6 +239,10 @@ public class TransactionEngineService {
 				InitializeTransactionresponse[] initializeTransactionresponseArray = initializeTransactionresponses
 						.getInitializeTransactionresponse();
 				for (InitializeTransactionresponse initializeResponse : initializeTransactionresponseArray) {
+					logger.info("----------------------initializeResponse is :::\nStatus Message : "
+							+ initializeResponse.getStatusMessage()
+							+ "\nTransaction ID : "
+							+ initializeResponse.getTransactionId());
 					transactionDetail
 							.setInitialMessageStatus(initializeResponse
 									.getStatusMessage());
@@ -269,12 +277,19 @@ public class TransactionEngineService {
 		completeTransaction.setTransactionchannelid(Constants.MOBILE_CHANNEL);
 		completeTransaction.setTransactionid(transactionDetail
 				.getTransactionId());
-		// completeTransaction.setTransactionstatusid(param);
+		if (transactionDetail.isTransactionComplete())
+			completeTransaction
+					.setTransactionstatusid(Constants.COMPLETE_STATUS);
+		else
+			completeTransaction.setTransactionstatusid(Constants.FAILED_STATUS);
 		completeTransaction.setTransactiontypeid(String
 				.valueOf(Constants.CASHOUT_TRANSACTIONTYPE));
 
 		TransactionresponsesE transactionresponsesE = new TransactionresponsesE();
 		try {
+			long timeOutInMilliSeconds = (5 * 36 * 1000);
+			matsStub._getServiceClient().getOptions()
+					.setTimeOutInMilliSeconds(timeOutInMilliSeconds);
 			matsStub = new MatsdataserviceStub();
 			logger.info("----------------------before making stub call");
 			transactionresponsesE = matsStub

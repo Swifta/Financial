@@ -3,10 +3,12 @@ package com.swifta.financial.utils;
 public class Constants {
 	public static int DEPOSITFLOAT_TRANSACTIONTYPEID = 1;
 
-	public static int PENDING_STATUS = 1;
-	public static int COMPLETE_STATUS = 2;
+	public static int PENDING_STATUS = 2;
+	public static int COMPLETE_STATUS = 1;
+	public static int FAILED_STATUS = 3;
 	public static String PENDING_VALUE = "PENDING";
 	public static String COMPLETE_VALUE = "COMPLETE";
+	public static String FAILED_VALUE = "FAILED";
 
 	public static int CASHIN_TRANSACTIONTYPE = 1;
 	public static int CASHOUT_TRANSACTIONTYPE = 2;

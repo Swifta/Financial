@@ -16,10 +16,12 @@ public class TransactionDetail {
 	private int transactionId;
 	private String externalTransactionId;
 	private String externalStatusCode;
+	private String externalStatusMessage;
 	private String initialMessageStatus;
 	private String updateMessageStatus;
 	private double serviceFee;
 	private double serviceCommission;
+	private boolean transactionComplete;
 
 	public TransactionDetail(String sender, String reciever, String amount,
 			String senderDescription, String recieverDescription,
@@ -37,8 +39,11 @@ public class TransactionDetail {
 
 			List<String> parameterList = extensionparameters
 					.getExtensionparam();
-			this.agentId = parameterList.get(0);
-			this.agentPin = parameterList.get(1);
+			this.agentPin = parameterList.get(0);
+			// this.agentId = reciever;
+			// this.agentId = parameterList.get(0);
+			if (parameterList.size() > 1)
+				this.agentPin = parameterList.get(1);
 		}
 
 	}
@@ -81,14 +86,6 @@ public class TransactionDetail {
 
 	public void setRecieverDescription(String recieverDescription) {
 		this.recieverDescription = recieverDescription;
-	}
-
-	public String getAgentId() {
-		return agentId;
-	}
-
-	public void setAgentId(String agentId) {
-		this.agentId = agentId;
 	}
 
 	public String getAgentPin() {
@@ -147,6 +144,14 @@ public class TransactionDetail {
 		this.externalStatusCode = externalStatusCode;
 	}
 
+	public String getExternalStatusMessage() {
+		return externalStatusMessage;
+	}
+
+	public void setExternalStatusMessage(String externalStatusMessage) {
+		this.externalStatusMessage = externalStatusMessage;
+	}
+
 	public double getServiceFee() {
 		return serviceFee;
 	}
@@ -161,6 +166,22 @@ public class TransactionDetail {
 
 	public void setServiceCommission(double serviceCommission) {
 		this.serviceCommission = serviceCommission;
+	}
+
+	public String getAgentId() {
+		return agentId;
+	}
+
+	public void setAgentId(String agentId) {
+		this.agentId = agentId;
+	}
+
+	public boolean isTransactionComplete() {
+		return transactionComplete;
+	}
+
+	public void setTransactionComplete(boolean transactionComplete) {
+		this.transactionComplete = transactionComplete;
 	}
 
 }
