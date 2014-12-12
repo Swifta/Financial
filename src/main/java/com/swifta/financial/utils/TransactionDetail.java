@@ -43,7 +43,7 @@ public class TransactionDetail {
 			// this.agentId = reciever;
 			// this.agentId = parameterList.get(0);
 			if (parameterList.size() > 1)
-				this.agentPin = parameterList.get(1);
+				this.agentId = parameterList.get(1);
 		}
 
 	}

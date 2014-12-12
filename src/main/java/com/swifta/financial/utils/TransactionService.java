@@ -69,14 +69,23 @@ public class TransactionService {
 
 		com.swifta.subsidiary.mats.serviceprovider.operation.spfinancial.v1_0.SpfinancialsStub.ParameterExtension spFinancialExtension = new com.swifta.subsidiary.mats.serviceprovider.operation.spfinancial.v1_0.SpfinancialsStub.ParameterExtension();
 		spFinancialExtension.setMmoperator(extensionparameters.getMmoperator());
-		spFinancialExtension.setExtensionparam((String[]) extensionparameters
-				.getExtensionparam().toArray());
-
+		// spFinancialExtension.setExtensionparam((Object[])
+		// extensionparameters.getExtensionparam().toArray());
+		String[] extensionArray = new String[extensionparameters
+				.getExtensionparam().size()];
+		int paramcount = 0;
+		for (Object extensionObject : extensionparameters.getExtensionparam()
+				.toArray()) {
+			extensionArray[paramcount] = extensionObject.toString();
+			paramcount++;
+		}
+		spFinancialExtension.setExtensionparam(extensionArray);
 		cashoutrequest.setExtensionparameters(spFinancialExtension);
 		CashoutrequestE cashoutrequestE = new CashoutrequestE();
 		cashoutrequestE.setCashoutrequest(cashoutrequest);
 		CashoutrequestResponseE cashoutResponseE = null;
 		try {
+			spFinancialStub = new SpfinancialsStub();
 			logger.info("----------------------before instantiating stub");
 			long timeOutInMilliSeconds = (5 * 36 * 1000);
 			spFinancialStub._getServiceClient().getOptions()

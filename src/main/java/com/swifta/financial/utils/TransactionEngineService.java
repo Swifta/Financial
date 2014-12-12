@@ -194,7 +194,7 @@ public class TransactionEngineService {
 		initializeTransaction.setReceivinguserresourceid(transactionDetail
 				.getAgentId());
 		initializeTransaction.setSendinguserresourceid(transactionDetail
-				.getSender());
+				.getMmo());
 		initializeTransaction.setStatusMessage(Constants.PENDING_VALUE);
 		initializeTransaction.setTomessage(transactionDetail
 				.getRecieverDescription());
@@ -206,7 +206,10 @@ public class TransactionEngineService {
 		initializeTransaction.setTransactionstatusid(Constants.PENDING_STATUS);
 		initializeTransaction.setTransactiontypeid(String
 				.valueOf(Constants.CASHOUT_TRANSACTIONTYPE));
-		logger.info("----------------------initiate cash out response");
+		logger.info("----------------------initiate cash out response\nRecieving ID : "
+				+ initializeTransaction.getReceivinguserresourceid()
+				+ "\nSending ID : "
+				+ initializeTransaction.getSendinguserresourceid());
 		InitializeTransactionresponsesE initializeTransactionResponsesE = new InitializeTransactionresponsesE();
 
 		logger.info("----------------------initiate cash out stub");
@@ -246,8 +249,20 @@ public class TransactionEngineService {
 					transactionDetail
 							.setInitialMessageStatus(initializeResponse
 									.getStatusMessage());
-					transactionDetail.setTransactionId(Integer
-							.valueOf(initializeResponse.getTransactionId()));
+					if (!initializeResponse
+							.getStatusMessage()
+							.equalsIgnoreCase(
+									"RECEIVING_RESOURCE_CANNOT_BE_FOUND OR INACTIVE")
+							&& !initializeResponse
+									.getStatusMessage()
+									.equalsIgnoreCase(
+											"SENDING_RESOURCE_CANNOT_BE_FOUND OR INACTIVE")) {
+
+						transactionDetail
+								.setTransactionId(Integer
+										.valueOf(initializeResponse
+												.getTransactionId()));
+					}
 				}
 			} else {
 				logger.info("----------------------initializeTransactionresponses is  null");
@@ -270,13 +285,22 @@ public class TransactionEngineService {
 				.getExternalTransactionId());
 		completeTransaction.setReceivinguserresourceid(transactionDetail
 				.getAgentId());
-		completeTransaction.setSendingmsisdn(transactionDetail.getSender());
-		completeTransaction.setSendinguserresourceid(transactionDetail
-				.getSender());
+		completeTransaction.setSendingmsisdn(transactionDetail.getMmo());
+		completeTransaction
+				.setSendinguserresourceid(transactionDetail.getMmo());
 		completeTransaction.setStatusMessage(Constants.COMPLETE_VALUE);
 		completeTransaction.setTransactionchannelid(Constants.MOBILE_CHANNEL);
 		completeTransaction.setTransactionid(transactionDetail
 				.getTransactionId());
+		logger.info("----------------------initiate cash out response\nRecieving ID : "
+				+ completeTransaction.getReceivinguserresourceid()
+				+ "\nSending ID : "
+				+ completeTransaction.getSendinguserresourceid()
+				+ "\nExt Transaction ID : "
+				+ completeTransaction.getExternaltransactionid()
+				+ "\nTransaction ID : "
+				+ completeTransaction.getTransactionid());
+
 		if (transactionDetail.isTransactionComplete())
 			completeTransaction
 					.setTransactionstatusid(Constants.COMPLETE_STATUS);
@@ -315,15 +339,30 @@ public class TransactionEngineService {
 				Transactionresponse[] transactionResponseArray = transactionresponses
 						.getTransactionresponse();
 				for (Transactionresponse transactionResponse : transactionResponseArray) {
+					logger.info("----------------------Transaction Details \n Status Message : "
+							+ transactionResponse.getStatusMessage()
+							+ " \nService Fee : "
+							+ transactionResponse.getServicefee()
+							+ "\nService Commission : "
+							+ transactionResponse.getServicecommission());
 					transactionDetail
 							.setUpdateMessageStatus(transactionResponse
 									.getStatusMessage());
-					transactionDetail.setServiceFee(Double
-							.valueOf(transactionResponse.getServicefee()));
-					transactionDetail
-							.setServiceCommission(Double
-									.valueOf(transactionResponse
-											.getServicecommission()));
+					if (!transactionResponse
+							.getStatusMessage()
+							.equalsIgnoreCase(
+									"RECEIVING_RESOURCE_CANNOT_BE_FOUND OR INACTIVE")
+							&& !transactionResponse
+									.getStatusMessage()
+									.equalsIgnoreCase(
+											"SENDING_RESOURCE_CANNOT_BE_FOUND OR INACTIVE")) {
+
+						transactionDetail.setServiceFee(Double
+								.valueOf(transactionResponse.getServicefee()));
+						transactionDetail.setServiceCommission(Double
+								.valueOf(transactionResponse
+										.getServicecommission()));
+					}
 				}
 			} else {
 				logger.info("----------------------transactionresponses is null");

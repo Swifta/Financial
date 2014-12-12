@@ -417,7 +417,7 @@
         /* This type was generated from the piece of schema that had
                 name = cashoutrequestResponse
                 Namespace URI = http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0
-                Namespace Prefix = ns6
+                Namespace Prefix = ns1
                 */
             
 
@@ -535,7 +535,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0")){
-                return "ns6";
+                return "ns1";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -837,7 +837,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0",
                 "cashinrequest",
-                "ns6");
+                "ns1");
 
             
 
@@ -915,7 +915,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0")){
-                return "ns6";
+                return "ns1";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -1170,7 +1170,7 @@
         /* This type was generated from the piece of schema that had
                 name = cashinrequestResponse
                 Namespace URI = http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0
-                Namespace Prefix = ns6
+                Namespace Prefix = ns1
                 */
             
 
@@ -1288,7 +1288,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0")){
-                return "ns6";
+                return "ns1";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -1590,7 +1590,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0",
                 "cashinrequestResponse",
-                "ns6");
+                "ns1");
 
             
 
@@ -1668,7 +1668,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0")){
-                return "ns6";
+                return "ns1";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -2016,7 +2016,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0",
                 "cashoutrequestResponse",
-                "ns6");
+                "ns1");
 
             
 
@@ -2094,7 +2094,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0")){
-                return "ns6";
+                return "ns1";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -2349,7 +2349,7 @@
         /* This type was generated from the piece of schema that had
                 name = cashinrequest
                 Namespace URI = http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0
-                Namespace Prefix = ns6
+                Namespace Prefix = ns1
                 */
             
 
@@ -2767,7 +2767,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0")){
-                return "ns6";
+                return "ns1";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -3234,7 +3234,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0",
                 "cashoutrequest",
-                "ns6");
+                "ns1");
 
             
 
@@ -3312,7 +3312,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0")){
-                return "ns6";
+                return "ns1";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -3567,7 +3567,7 @@
         /* This type was generated from the piece of schema that had
                 name = cashinresponse
                 Namespace URI = http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0
-                Namespace Prefix = ns6
+                Namespace Prefix = ns1
                 */
             
 
@@ -4033,7 +4033,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0")){
-                return "ns6";
+                return "ns1";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -4523,7 +4523,7 @@
         /* This type was generated from the piece of schema that had
                 name = parameterExtension
                 Namespace URI = http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0
-                Namespace Prefix = ns6
+                Namespace Prefix = ns1
                 */
             
 
@@ -4830,7 +4830,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0")){
-                return "ns6";
+                return "ns1";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -5261,7 +5261,7 @@
         /* This type was generated from the piece of schema that had
                 name = cashoutrequest
                 Namespace URI = http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0
-                Namespace Prefix = ns6
+                Namespace Prefix = ns1
                 */
             
 
@@ -5679,7 +5679,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0")){
-                return "ns6";
+                return "ns1";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -6146,7 +6146,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0",
                 "statusCode",
-                "ns6");
+                "ns1");
 
             
 
@@ -6285,7 +6285,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0")){
-                return "ns6";
+                return "ns1";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -6592,7 +6592,7 @@
         /* This type was generated from the piece of schema that had
                 name = cashoutresponse
                 Namespace URI = http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0
-                Namespace Prefix = ns6
+                Namespace Prefix = ns1
                 */
             
 
@@ -7058,7 +7058,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0")){
-                return "ns6";
+                return "ns1";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
