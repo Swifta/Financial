@@ -142,7 +142,8 @@ public class TransactionService {
 				.getOrginatingpartnerbalanceafter());
 		cashoutresponse.setOrginatingpartnerfee(spCashoutResponse
 				.getOrginatingpartnerfee());
-		logger.info("---------------------- update Cashout");
+		logger.info("---------------------- update Cashout.>> and Trans complete ::"
+				+ transactionDetail.isTransactionComplete());
 		transactionEngineService.updateCashout(transactionDetail);
 		logger.info("---------------------- after update Cashout");
 		return cashoutresponse;

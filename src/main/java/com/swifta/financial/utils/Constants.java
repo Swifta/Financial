@@ -10,13 +10,13 @@ public class Constants {
 	public static String COMPLETE_VALUE = "COMPLETE";
 	public static String FAILED_VALUE = "FAILED";
 
-	public static int CASHIN_TRANSACTIONTYPE = 1;
-	public static int CASHOUT_TRANSACTIONTYPE = 2;
-	public static int DEPOSITFLOAT_TRANSACTIONTYPE = 3;
-	public static int AIRTIMESALES_TRANSACTIONTYPE = 4;
-	public static int BILLPAYMENTS_TRANSACTIONTYPE = 5;
-	public static int CHECKBALANCE_TRANSACTIONTYPE = 6;
-	public static int MONEYTRANSFERS_TRANSACTIONTYPE = 7;
+	public static int CASHIN_TRANSACTIONTYPE = 4;
+	public static int CASHOUT_TRANSACTIONTYPE = 5;
+	public static int DEPOSITFLOAT_TRANSACTIONTYPE = 1;
+	public static int AIRTIMESALES_TRANSACTIONTYPE = 17;
+	public static int BILLPAYMENTS_TRANSACTIONTYPE = 17;
+	public static int CHECKBALANCE_TRANSACTIONTYPE = 10;
+	public static int MONEYTRANSFERS_TRANSACTIONTYPE = 3;
 
 	public static int MOBILE_CHANNEL = 2;
 

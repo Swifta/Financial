@@ -281,6 +281,7 @@ public class TransactionEngineService {
 				.getAmount()));
 		completeTransaction.setExternalstatuscode(transactionDetail
 				.getExternalStatusCode());
+		completeTransaction.setExternalreference(transactionDetail.getSender());
 		completeTransaction.setExternaltransactionid(transactionDetail
 				.getExternalTransactionId());
 		completeTransaction.setReceivinguserresourceid(transactionDetail
@@ -288,7 +289,7 @@ public class TransactionEngineService {
 		completeTransaction.setSendingmsisdn(transactionDetail.getMmo());
 		completeTransaction
 				.setSendinguserresourceid(transactionDetail.getMmo());
-		completeTransaction.setStatusMessage(Constants.COMPLETE_VALUE);
+
 		completeTransaction.setTransactionchannelid(Constants.MOBILE_CHANNEL);
 		completeTransaction.setTransactionid(transactionDetail
 				.getTransactionId());
@@ -299,13 +300,18 @@ public class TransactionEngineService {
 				+ "\nExt Transaction ID : "
 				+ completeTransaction.getExternaltransactionid()
 				+ "\nTransaction ID : "
-				+ completeTransaction.getTransactionid());
+				+ completeTransaction.getTransactionid()
+				+ "\nTransaction Complete : "
+				+ transactionDetail.isTransactionComplete());
 
-		if (transactionDetail.isTransactionComplete())
+		if (transactionDetail.isTransactionComplete()) {
 			completeTransaction
 					.setTransactionstatusid(Constants.COMPLETE_STATUS);
-		else
+			completeTransaction.setStatusMessage(Constants.COMPLETE_VALUE);
+		} else {
 			completeTransaction.setTransactionstatusid(Constants.FAILED_STATUS);
+			completeTransaction.setStatusMessage(Constants.FAILED_VALUE);
+		}
 		completeTransaction.setTransactiontypeid(String
 				.valueOf(Constants.CASHOUT_TRANSACTIONTYPE));
 
@@ -356,12 +362,14 @@ public class TransactionEngineService {
 									.getStatusMessage()
 									.equalsIgnoreCase(
 											"SENDING_RESOURCE_CANNOT_BE_FOUND OR INACTIVE")) {
-
-						transactionDetail.setServiceFee(Double
-								.valueOf(transactionResponse.getServicefee()));
-						transactionDetail.setServiceCommission(Double
-								.valueOf(transactionResponse
-										.getServicecommission()));
+						if (transactionResponse.getServicefee() != null)
+							transactionDetail.setServiceFee(Double
+									.valueOf(transactionResponse
+											.getServicefee()));
+						if (transactionResponse.getServicecommission() != null)
+							transactionDetail.setServiceCommission(Double
+									.valueOf(transactionResponse
+											.getServicecommission()));
 					}
 				}
 			} else {
