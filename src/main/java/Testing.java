@@ -34,15 +34,15 @@ public class Testing {
 
 		FinancialPortImpl impl = new FinancialPortImpl();
 		// pocketmoni
-		// String userPin = "7005";
-		// String orginatingresourceid = "08063305711";
-		// String destinationresourceid = "2348076763191";
+		String userPin = "7005";
+		String orginatingresourceid = "2348076763191";
+		String destinationresourceid = "08063305711";
 
 		// teasymobile
-		String userPin = "1234";
-		String orginatingresourceid = "08063305711";
-		String destinationresourceid = "2348171000157";
-		// String destinationresourceid = "2348104001339";
+		// String userPin = "1234";
+		// String orginatingresourceid = "08063305711";
+		// String destinationresourceid = "2348171000157" for 7005;
+		// String destinationresourceid = "2348104001339" for 1234;
 
 		// readycash
 		// String userPin = "0000000000000000";
@@ -54,13 +54,18 @@ public class Testing {
 		// String orginatingresourceid = "2348170730549";
 		// String destinationresourceid = "2348170730549";
 
+		// FORTIS
+		// String userPin = "";
+		// String originatingresourceid = "";
+		// String destinationresourceid = "";
+
 		String amount = "40";
 		String sendingdescription = "Payments";
 		String receivingdescription = "details";
 		ParameterExtension extensionparameters = new ParameterExtension();
 		System.out
 				.println("--------------------------------After instantiating extension parameters");
-		extensionparameters.setMmoperator("teasymobile");
+		extensionparameters.setMmoperator("pocketmoni");
 		extensionparameters.setSpTransactionid(generateReferencenNumber(6));
 		extensionparameters.getExtensionparam().add(userPin);
 		extensionparameters.getExtensionparam().add("dolapo");

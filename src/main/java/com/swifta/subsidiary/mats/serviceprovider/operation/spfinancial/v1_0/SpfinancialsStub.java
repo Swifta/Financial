@@ -115,7 +115,7 @@
      */
     public SpfinancialsStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"http://54.173.157.210:9765/SPfinancial_1.0.0/2.0.0/services/SPfinancial" );
+                    this(configurationContext,"http://portal.mfisa.com:9765/SPfinancial_1.0.0/2.0.0/services/SPfinancial" );
                 
     }
 
@@ -124,7 +124,7 @@
      */
     public SpfinancialsStub() throws org.apache.axis2.AxisFault {
         
-                    this("http://54.173.157.210:9765/SPfinancial_1.0.0/2.0.0/services/SPfinancial" );
+                    this("http://portal.mfisa.com:9765/SPfinancial_1.0.0/2.0.0/services/SPfinancial" );
                 
     }
 
@@ -411,7 +411,7 @@
         }
         return false;
     }
-     //http://54.173.157.210:9765/SPfinancial_1.0.0/2.0.0/services/SPfinancial
+     //http://portal.mfisa.com:9765/SPfinancial_1.0.0/2.0.0/services/SPfinancial
         public static class CashoutrequestResponse
         implements org.apache.axis2.databinding.ADBBean{
         /* This type was generated from the piece of schema that had
@@ -1987,16 +1987,6 @@
               
                   if (
                   "http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0".equals(namespaceURI) &&
-                  "statusCode".equals(typeName)){
-                   
-                            return  StatusCode.Factory.parse(reader);
-                        
-
-                  }
-
-              
-                  if (
-                  "http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0".equals(namespaceURI) &&
                   "cashoutrequestResponse".equals(typeName)){
                    
                             return  CashoutrequestResponse.Factory.parse(reader);
@@ -2327,6 +2317,890 @@
                              }  
                            }  // end of while loop
                         
+
+
+
+            } catch (javax.xml.stream.XMLStreamException e) {
+                throw new java.lang.Exception(e);
+            }
+
+            return object;
+        }
+
+        }//end of factory class
+
+        
+
+        }
+           
+    
+        public static class Cashoutrequest
+        implements org.apache.axis2.databinding.ADBBean{
+        /* This type was generated from the piece of schema that had
+                name = cashoutrequest
+                Namespace URI = http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0
+                Namespace Prefix = ns1
+                */
+            
+
+                        /**
+                        * field for Orginatingresourceid
+                        */
+
+                        
+                                    protected java.lang.String localOrginatingresourceid ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localOrginatingresourceidTracker = false ;
+
+                           public boolean isOrginatingresourceidSpecified(){
+                               return localOrginatingresourceidTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getOrginatingresourceid(){
+                               return localOrginatingresourceid;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Orginatingresourceid
+                               */
+                               public void setOrginatingresourceid(java.lang.String param){
+                            localOrginatingresourceidTracker = param != null;
+                                   
+                                            this.localOrginatingresourceid=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Destinationresourceid
+                        */
+
+                        
+                                    protected java.lang.String localDestinationresourceid ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localDestinationresourceidTracker = false ;
+
+                           public boolean isDestinationresourceidSpecified(){
+                               return localDestinationresourceidTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getDestinationresourceid(){
+                               return localDestinationresourceid;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Destinationresourceid
+                               */
+                               public void setDestinationresourceid(java.lang.String param){
+                            localDestinationresourceidTracker = param != null;
+                                   
+                                            this.localDestinationresourceid=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Amount
+                        */
+
+                        
+                                    protected java.lang.String localAmount ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localAmountTracker = false ;
+
+                           public boolean isAmountSpecified(){
+                               return localAmountTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getAmount(){
+                               return localAmount;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Amount
+                               */
+                               public void setAmount(java.lang.String param){
+                            localAmountTracker = param != null;
+                                   
+                                            this.localAmount=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Sendingdescription
+                        */
+
+                        
+                                    protected java.lang.String localSendingdescription ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localSendingdescriptionTracker = false ;
+
+                           public boolean isSendingdescriptionSpecified(){
+                               return localSendingdescriptionTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getSendingdescription(){
+                               return localSendingdescription;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Sendingdescription
+                               */
+                               public void setSendingdescription(java.lang.String param){
+                            localSendingdescriptionTracker = param != null;
+                                   
+                                            this.localSendingdescription=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Receivingdescription
+                        */
+
+                        
+                                    protected java.lang.String localReceivingdescription ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localReceivingdescriptionTracker = false ;
+
+                           public boolean isReceivingdescriptionSpecified(){
+                               return localReceivingdescriptionTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getReceivingdescription(){
+                               return localReceivingdescription;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Receivingdescription
+                               */
+                               public void setReceivingdescription(java.lang.String param){
+                            localReceivingdescriptionTracker = param != null;
+                                   
+                                            this.localReceivingdescription=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Extensionparameters
+                        */
+
+                        
+                                    protected ParameterExtension localExtensionparameters ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localExtensionparametersTracker = false ;
+
+                           public boolean isExtensionparametersSpecified(){
+                               return localExtensionparametersTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return ParameterExtension
+                           */
+                           public  ParameterExtension getExtensionparameters(){
+                               return localExtensionparameters;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Extensionparameters
+                               */
+                               public void setExtensionparameters(ParameterExtension param){
+                            localExtensionparametersTracker = param != null;
+                                   
+                                            this.localExtensionparameters=param;
+                                    
+
+                               }
+                            
+     
+
+     
+        /**
+        *
+        * @param parentQName
+        * @param factory
+        * @return org.apache.axiom.om.OMElement
+        */
+       public org.apache.axiom.om.OMElement getOMElement (
+               final javax.xml.namespace.QName parentQName,
+               final org.apache.axiom.om.OMFactory factory) throws org.apache.axis2.databinding.ADBException{
+
+
+        
+               org.apache.axiom.om.OMDataSource dataSource =
+                       new org.apache.axis2.databinding.ADBDataSource(this,parentQName);
+               return factory.createOMElement(dataSource,parentQName);
+            
+        }
+
+         public void serialize(final javax.xml.namespace.QName parentQName,
+                                       javax.xml.stream.XMLStreamWriter xmlWriter)
+                                throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
+                           serialize(parentQName,xmlWriter,false);
+         }
+
+         public void serialize(final javax.xml.namespace.QName parentQName,
+                               javax.xml.stream.XMLStreamWriter xmlWriter,
+                               boolean serializeType)
+            throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
+            
+                
+
+
+                java.lang.String prefix = null;
+                java.lang.String namespace = null;
+                
+
+                    prefix = parentQName.getPrefix();
+                    namespace = parentQName.getNamespaceURI();
+                    writeStartElement(prefix, namespace, parentQName.getLocalPart(), xmlWriter);
+                
+                  if (serializeType){
+               
+
+                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0");
+                   if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
+                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
+                           namespacePrefix+":cashoutrequest",
+                           xmlWriter);
+                   } else {
+                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
+                           "cashoutrequest",
+                           xmlWriter);
+                   }
+
+               
+                   }
+                if (localOrginatingresourceidTracker){
+                                    namespace = "";
+                                    writeStartElement(null, namespace, "orginatingresourceid", xmlWriter);
+                             
+
+                                          if (localOrginatingresourceid==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("orginatingresourceid cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localOrginatingresourceid);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localDestinationresourceidTracker){
+                                    namespace = "";
+                                    writeStartElement(null, namespace, "destinationresourceid", xmlWriter);
+                             
+
+                                          if (localDestinationresourceid==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("destinationresourceid cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localDestinationresourceid);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localAmountTracker){
+                                    namespace = "";
+                                    writeStartElement(null, namespace, "amount", xmlWriter);
+                             
+
+                                          if (localAmount==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("amount cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localAmount);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localSendingdescriptionTracker){
+                                    namespace = "";
+                                    writeStartElement(null, namespace, "sendingdescription", xmlWriter);
+                             
+
+                                          if (localSendingdescription==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("sendingdescription cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localSendingdescription);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localReceivingdescriptionTracker){
+                                    namespace = "";
+                                    writeStartElement(null, namespace, "receivingdescription", xmlWriter);
+                             
+
+                                          if (localReceivingdescription==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("receivingdescription cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localReceivingdescription);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localExtensionparametersTracker){
+                                            if (localExtensionparameters==null){
+                                                 throw new org.apache.axis2.databinding.ADBException("extensionparameters cannot be null!!");
+                                            }
+                                           localExtensionparameters.serialize(new javax.xml.namespace.QName("","extensionparameters"),
+                                               xmlWriter);
+                                        }
+                    xmlWriter.writeEndElement();
+               
+
+        }
+
+        private static java.lang.String generatePrefix(java.lang.String namespace) {
+            if(namespace.equals("http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0")){
+                return "ns1";
+            }
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
+        }
+
+        /**
+         * Utility method to write an element start tag.
+         */
+        private void writeStartElement(java.lang.String prefix, java.lang.String namespace, java.lang.String localPart,
+                                       javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+            java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
+            if (writerPrefix != null) {
+                xmlWriter.writeStartElement(namespace, localPart);
+            } else {
+                if (namespace.length() == 0) {
+                    prefix = "";
+                } else if (prefix == null) {
+                    prefix = generatePrefix(namespace);
+                }
+
+                xmlWriter.writeStartElement(prefix, localPart, namespace);
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+        }
+        
+        /**
+         * Util method to write an attribute with the ns prefix
+         */
+        private void writeAttribute(java.lang.String prefix,java.lang.String namespace,java.lang.String attName,
+                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
+            if (xmlWriter.getPrefix(namespace) == null) {
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+            xmlWriter.writeAttribute(namespace,attName,attValue);
+        }
+
+        /**
+         * Util method to write an attribute without the ns prefix
+         */
+        private void writeAttribute(java.lang.String namespace,java.lang.String attName,
+                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
+            if (namespace.equals("")) {
+                xmlWriter.writeAttribute(attName,attValue);
+            } else {
+                registerPrefix(xmlWriter, namespace);
+                xmlWriter.writeAttribute(namespace,attName,attValue);
+            }
+        }
+
+
+           /**
+             * Util method to write an attribute without the ns prefix
+             */
+            private void writeQNameAttribute(java.lang.String namespace, java.lang.String attName,
+                                             javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+
+                java.lang.String attributeNamespace = qname.getNamespaceURI();
+                java.lang.String attributePrefix = xmlWriter.getPrefix(attributeNamespace);
+                if (attributePrefix == null) {
+                    attributePrefix = registerPrefix(xmlWriter, attributeNamespace);
+                }
+                java.lang.String attributeValue;
+                if (attributePrefix.trim().length() > 0) {
+                    attributeValue = attributePrefix + ":" + qname.getLocalPart();
+                } else {
+                    attributeValue = qname.getLocalPart();
+                }
+
+                if (namespace.equals("")) {
+                    xmlWriter.writeAttribute(attName, attributeValue);
+                } else {
+                    registerPrefix(xmlWriter, namespace);
+                    xmlWriter.writeAttribute(namespace, attName, attributeValue);
+                }
+            }
+        /**
+         *  method to handle Qnames
+         */
+
+        private void writeQName(javax.xml.namespace.QName qname,
+                                javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+            java.lang.String namespaceURI = qname.getNamespaceURI();
+            if (namespaceURI != null) {
+                java.lang.String prefix = xmlWriter.getPrefix(namespaceURI);
+                if (prefix == null) {
+                    prefix = generatePrefix(namespaceURI);
+                    xmlWriter.writeNamespace(prefix, namespaceURI);
+                    xmlWriter.setPrefix(prefix,namespaceURI);
+                }
+
+                if (prefix.trim().length() > 0){
+                    xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+                } else {
+                    // i.e this is the default namespace
+                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+                }
+
+            } else {
+                xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+            }
+        }
+
+        private void writeQNames(javax.xml.namespace.QName[] qnames,
+                                 javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+
+            if (qnames != null) {
+                // we have to store this data until last moment since it is not possible to write any
+                // namespace data after writing the charactor data
+                java.lang.StringBuffer stringToWrite = new java.lang.StringBuffer();
+                java.lang.String namespaceURI = null;
+                java.lang.String prefix = null;
+
+                for (int i = 0; i < qnames.length; i++) {
+                    if (i > 0) {
+                        stringToWrite.append(" ");
+                    }
+                    namespaceURI = qnames[i].getNamespaceURI();
+                    if (namespaceURI != null) {
+                        prefix = xmlWriter.getPrefix(namespaceURI);
+                        if ((prefix == null) || (prefix.length() == 0)) {
+                            prefix = generatePrefix(namespaceURI);
+                            xmlWriter.writeNamespace(prefix, namespaceURI);
+                            xmlWriter.setPrefix(prefix,namespaceURI);
+                        }
+
+                        if (prefix.trim().length() > 0){
+                            stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                        } else {
+                            stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                        }
+                    } else {
+                        stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                    }
+                }
+                xmlWriter.writeCharacters(stringToWrite.toString());
+            }
+
+        }
+
+
+        /**
+         * Register a namespace prefix
+         */
+        private java.lang.String registerPrefix(javax.xml.stream.XMLStreamWriter xmlWriter, java.lang.String namespace) throws javax.xml.stream.XMLStreamException {
+            java.lang.String prefix = xmlWriter.getPrefix(namespace);
+            if (prefix == null) {
+                prefix = generatePrefix(namespace);
+                while (xmlWriter.getNamespaceContext().getNamespaceURI(prefix) != null) {
+                    prefix = org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
+                }
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+            return prefix;
+        }
+
+
+  
+        /**
+        * databinding method to get an XML representation of this object
+        *
+        */
+        public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName)
+                    throws org.apache.axis2.databinding.ADBException{
+
+
+        
+                 java.util.ArrayList elementList = new java.util.ArrayList();
+                 java.util.ArrayList attribList = new java.util.ArrayList();
+
+                 if (localOrginatingresourceidTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "orginatingresourceid"));
+                                 
+                                        if (localOrginatingresourceid != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localOrginatingresourceid));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("orginatingresourceid cannot be null!!");
+                                        }
+                                    } if (localDestinationresourceidTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "destinationresourceid"));
+                                 
+                                        if (localDestinationresourceid != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localDestinationresourceid));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("destinationresourceid cannot be null!!");
+                                        }
+                                    } if (localAmountTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "amount"));
+                                 
+                                        if (localAmount != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAmount));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("amount cannot be null!!");
+                                        }
+                                    } if (localSendingdescriptionTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "sendingdescription"));
+                                 
+                                        if (localSendingdescription != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSendingdescription));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("sendingdescription cannot be null!!");
+                                        }
+                                    } if (localReceivingdescriptionTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "receivingdescription"));
+                                 
+                                        if (localReceivingdescription != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localReceivingdescription));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("receivingdescription cannot be null!!");
+                                        }
+                                    } if (localExtensionparametersTracker){
+                            elementList.add(new javax.xml.namespace.QName("",
+                                                                      "extensionparameters"));
+                            
+                            
+                                    if (localExtensionparameters==null){
+                                         throw new org.apache.axis2.databinding.ADBException("extensionparameters cannot be null!!");
+                                    }
+                                    elementList.add(localExtensionparameters);
+                                }
+
+                return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
+            
+            
+
+        }
+
+  
+
+     /**
+      *  Factory class that keeps the parse method
+      */
+    public static class Factory{
+
+        
+        
+
+        /**
+        * static method to create the object
+        * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
+        *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+        * Postcondition: If this object is an element, the reader is positioned at its end element
+        *                If this object is a complex type, the reader is positioned at the end element of its outer element
+        */
+        public static Cashoutrequest parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            Cashoutrequest object =
+                new Cashoutrequest();
+
+            int event;
+            java.lang.String nillableValue = null;
+            java.lang.String prefix ="";
+            java.lang.String namespaceuri ="";
+            try {
+                
+                while (!reader.isStartElement() && !reader.isEndElement())
+                    reader.next();
+
+                
+                if (reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","type")!=null){
+                  java.lang.String fullTypeName = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance",
+                        "type");
+                  if (fullTypeName!=null){
+                    java.lang.String nsPrefix = null;
+                    if (fullTypeName.indexOf(":") > -1){
+                        nsPrefix = fullTypeName.substring(0,fullTypeName.indexOf(":"));
+                    }
+                    nsPrefix = nsPrefix==null?"":nsPrefix;
+
+                    java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
+                    
+                            if (!"cashoutrequest".equals(type)){
+                                //find namespace for the prefix
+                                java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
+                                return (Cashoutrequest)ExtensionMapper.getTypeObject(
+                                     nsUri,type,reader);
+                              }
+                        
+
+                  }
+                
+
+                }
+
+                
+
+                
+                // Note all attributes that were handled. Used to differ normal attributes
+                // from anyAttributes.
+                java.util.Vector handledAttributes = new java.util.Vector();
+                
+
+                
+                    
+                    reader.next();
+                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","orginatingresourceid").equals(reader.getName())){
+                                
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"orginatingresourceid" +"  cannot be null");
+                                    }
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setOrginatingresourceid(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","destinationresourceid").equals(reader.getName())){
+                                
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"destinationresourceid" +"  cannot be null");
+                                    }
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setDestinationresourceid(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","amount").equals(reader.getName())){
+                                
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"amount" +"  cannot be null");
+                                    }
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setAmount(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","sendingdescription").equals(reader.getName())){
+                                
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"sendingdescription" +"  cannot be null");
+                                    }
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setSendingdescription(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","receivingdescription").equals(reader.getName())){
+                                
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"receivingdescription" +"  cannot be null");
+                                    }
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setReceivingdescription(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","extensionparameters").equals(reader.getName())){
+                                
+                                                object.setExtensionparameters(ParameterExtension.Factory.parse(reader));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                  
+                            while (!reader.isStartElement() && !reader.isEndElement())
+                                reader.next();
+                            
+                                if (reader.isStartElement())
+                                // A start element we are not expecting indicates a trailing invalid property
+                                throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
+                            
 
 
 
@@ -3786,7 +4660,7 @@
                         */
 
                         
-                                    protected StatusCode localStatuscode ;
+                                    protected java.lang.String localStatuscode ;
                                 
                            /*  This tracker boolean wil be used to detect whether the user called the set method
                           *   for this attribute. It will be used to determine whether to include this field
@@ -3802,9 +4676,9 @@
 
                            /**
                            * Auto generated getter method
-                           * @return StatusCode
+                           * @return java.lang.String
                            */
-                           public  StatusCode getStatuscode(){
+                           public  java.lang.String getStatuscode(){
                                return localStatuscode;
                            }
 
@@ -3814,7 +4688,7 @@
                                * Auto generated setter method
                                * @param param Statuscode
                                */
-                               public void setStatuscode(StatusCode param){
+                               public void setStatuscode(java.lang.String param){
                             localStatuscodeTracker = param != null;
                                    
                                             this.localStatuscode=param;
@@ -4014,12 +4888,24 @@
                                     
                                    xmlWriter.writeEndElement();
                              } if (localStatuscodeTracker){
-                                            if (localStatuscode==null){
-                                                 throw new org.apache.axis2.databinding.ADBException("statuscode cannot be null!!");
-                                            }
-                                           localStatuscode.serialize(new javax.xml.namespace.QName("","statuscode"),
-                                               xmlWriter);
-                                        } if (localExtensionparametersTracker){
+                                    namespace = "";
+                                    writeStartElement(null, namespace, "statuscode", xmlWriter);
+                             
+
+                                          if (localStatuscode==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("statuscode cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localStatuscode);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localExtensionparametersTracker){
                                             if (localExtensionparameters==null){
                                                  throw new org.apache.axis2.databinding.ADBException("extensionparameters cannot be null!!");
                                             }
@@ -4251,15 +5137,15 @@
                                            throw new org.apache.axis2.databinding.ADBException("ResponseMessage cannot be null!!");
                                         }
                                     } if (localStatuscodeTracker){
-                            elementList.add(new javax.xml.namespace.QName("",
+                                      elementList.add(new javax.xml.namespace.QName("",
                                                                       "statuscode"));
-                            
-                            
-                                    if (localStatuscode==null){
-                                         throw new org.apache.axis2.databinding.ADBException("statuscode cannot be null!!");
-                                    }
-                                    elementList.add(localStatuscode);
-                                } if (localExtensionparametersTracker){
+                                 
+                                        if (localStatuscode != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localStatuscode));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("statuscode cannot be null!!");
+                                        }
+                                    } if (localExtensionparametersTracker){
                             elementList.add(new javax.xml.namespace.QName("",
                                                                       "extensionparameters"));
                             
@@ -4469,7 +5355,993 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("","statuscode").equals(reader.getName())){
                                 
-                                                object.setStatuscode(StatusCode.Factory.parse(reader));
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"statuscode" +"  cannot be null");
+                                    }
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setStatuscode(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","extensionparameters").equals(reader.getName())){
+                                
+                                                object.setExtensionparameters(ParameterExtension.Factory.parse(reader));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                  
+                            while (!reader.isStartElement() && !reader.isEndElement())
+                                reader.next();
+                            
+                                if (reader.isStartElement())
+                                // A start element we are not expecting indicates a trailing invalid property
+                                throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
+                            
+
+
+
+            } catch (javax.xml.stream.XMLStreamException e) {
+                throw new java.lang.Exception(e);
+            }
+
+            return object;
+        }
+
+        }//end of factory class
+
+        
+
+        }
+           
+    
+        public static class Cashoutresponse
+        implements org.apache.axis2.databinding.ADBBean{
+        /* This type was generated from the piece of schema that had
+                name = cashoutresponse
+                Namespace URI = http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0
+                Namespace Prefix = ns1
+                */
+            
+
+                        /**
+                        * field for Orginatingpartnerfee
+                        */
+
+                        
+                                    protected java.lang.String localOrginatingpartnerfee ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localOrginatingpartnerfeeTracker = false ;
+
+                           public boolean isOrginatingpartnerfeeSpecified(){
+                               return localOrginatingpartnerfeeTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getOrginatingpartnerfee(){
+                               return localOrginatingpartnerfee;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Orginatingpartnerfee
+                               */
+                               public void setOrginatingpartnerfee(java.lang.String param){
+                            localOrginatingpartnerfeeTracker = param != null;
+                                   
+                                            this.localOrginatingpartnerfee=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Orginatingpartnerbalanceafter
+                        */
+
+                        
+                                    protected java.lang.String localOrginatingpartnerbalanceafter ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localOrginatingpartnerbalanceafterTracker = false ;
+
+                           public boolean isOrginatingpartnerbalanceafterSpecified(){
+                               return localOrginatingpartnerbalanceafterTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getOrginatingpartnerbalanceafter(){
+                               return localOrginatingpartnerbalanceafter;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Orginatingpartnerbalanceafter
+                               */
+                               public void setOrginatingpartnerbalanceafter(java.lang.String param){
+                            localOrginatingpartnerbalanceafterTracker = param != null;
+                                   
+                                            this.localOrginatingpartnerbalanceafter=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Destinationpartnerbalanceafter
+                        */
+
+                        
+                                    protected java.lang.String localDestinationpartnerbalanceafter ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localDestinationpartnerbalanceafterTracker = false ;
+
+                           public boolean isDestinationpartnerbalanceafterSpecified(){
+                               return localDestinationpartnerbalanceafterTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getDestinationpartnerbalanceafter(){
+                               return localDestinationpartnerbalanceafter;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Destinationpartnerbalanceafter
+                               */
+                               public void setDestinationpartnerbalanceafter(java.lang.String param){
+                            localDestinationpartnerbalanceafterTracker = param != null;
+                                   
+                                            this.localDestinationpartnerbalanceafter=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Statuscode
+                        */
+
+                        
+                                    protected java.lang.String localStatuscode ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localStatuscodeTracker = false ;
+
+                           public boolean isStatuscodeSpecified(){
+                               return localStatuscodeTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getStatuscode(){
+                               return localStatuscode;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Statuscode
+                               */
+                               public void setStatuscode(java.lang.String param){
+                            localStatuscodeTracker = param != null;
+                                   
+                                            this.localStatuscode=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Financialtransactionid
+                        */
+
+                        
+                                    protected java.lang.String localFinancialtransactionid ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localFinancialtransactionidTracker = false ;
+
+                           public boolean isFinancialtransactionidSpecified(){
+                               return localFinancialtransactionidTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getFinancialtransactionid(){
+                               return localFinancialtransactionid;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Financialtransactionid
+                               */
+                               public void setFinancialtransactionid(java.lang.String param){
+                            localFinancialtransactionidTracker = param != null;
+                                   
+                                            this.localFinancialtransactionid=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for ResponseMessage
+                        */
+
+                        
+                                    protected java.lang.String localResponseMessage ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localResponseMessageTracker = false ;
+
+                           public boolean isResponseMessageSpecified(){
+                               return localResponseMessageTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getResponseMessage(){
+                               return localResponseMessage;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param ResponseMessage
+                               */
+                               public void setResponseMessage(java.lang.String param){
+                            localResponseMessageTracker = param != null;
+                                   
+                                            this.localResponseMessage=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Extensionparameters
+                        */
+
+                        
+                                    protected ParameterExtension localExtensionparameters ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localExtensionparametersTracker = false ;
+
+                           public boolean isExtensionparametersSpecified(){
+                               return localExtensionparametersTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return ParameterExtension
+                           */
+                           public  ParameterExtension getExtensionparameters(){
+                               return localExtensionparameters;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Extensionparameters
+                               */
+                               public void setExtensionparameters(ParameterExtension param){
+                            localExtensionparametersTracker = param != null;
+                                   
+                                            this.localExtensionparameters=param;
+                                    
+
+                               }
+                            
+     
+
+     
+        /**
+        *
+        * @param parentQName
+        * @param factory
+        * @return org.apache.axiom.om.OMElement
+        */
+       public org.apache.axiom.om.OMElement getOMElement (
+               final javax.xml.namespace.QName parentQName,
+               final org.apache.axiom.om.OMFactory factory) throws org.apache.axis2.databinding.ADBException{
+
+
+        
+               org.apache.axiom.om.OMDataSource dataSource =
+                       new org.apache.axis2.databinding.ADBDataSource(this,parentQName);
+               return factory.createOMElement(dataSource,parentQName);
+            
+        }
+
+         public void serialize(final javax.xml.namespace.QName parentQName,
+                                       javax.xml.stream.XMLStreamWriter xmlWriter)
+                                throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
+                           serialize(parentQName,xmlWriter,false);
+         }
+
+         public void serialize(final javax.xml.namespace.QName parentQName,
+                               javax.xml.stream.XMLStreamWriter xmlWriter,
+                               boolean serializeType)
+            throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
+            
+                
+
+
+                java.lang.String prefix = null;
+                java.lang.String namespace = null;
+                
+
+                    prefix = parentQName.getPrefix();
+                    namespace = parentQName.getNamespaceURI();
+                    writeStartElement(prefix, namespace, parentQName.getLocalPart(), xmlWriter);
+                
+                  if (serializeType){
+               
+
+                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0");
+                   if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
+                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
+                           namespacePrefix+":cashoutresponse",
+                           xmlWriter);
+                   } else {
+                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
+                           "cashoutresponse",
+                           xmlWriter);
+                   }
+
+               
+                   }
+                if (localOrginatingpartnerfeeTracker){
+                                    namespace = "";
+                                    writeStartElement(null, namespace, "orginatingpartnerfee", xmlWriter);
+                             
+
+                                          if (localOrginatingpartnerfee==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("orginatingpartnerfee cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localOrginatingpartnerfee);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localOrginatingpartnerbalanceafterTracker){
+                                    namespace = "";
+                                    writeStartElement(null, namespace, "orginatingpartnerbalanceafter", xmlWriter);
+                             
+
+                                          if (localOrginatingpartnerbalanceafter==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("orginatingpartnerbalanceafter cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localOrginatingpartnerbalanceafter);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localDestinationpartnerbalanceafterTracker){
+                                    namespace = "";
+                                    writeStartElement(null, namespace, "destinationpartnerbalanceafter", xmlWriter);
+                             
+
+                                          if (localDestinationpartnerbalanceafter==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("destinationpartnerbalanceafter cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localDestinationpartnerbalanceafter);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localStatuscodeTracker){
+                                    namespace = "";
+                                    writeStartElement(null, namespace, "statuscode", xmlWriter);
+                             
+
+                                          if (localStatuscode==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("statuscode cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localStatuscode);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localFinancialtransactionidTracker){
+                                    namespace = "";
+                                    writeStartElement(null, namespace, "financialtransactionid", xmlWriter);
+                             
+
+                                          if (localFinancialtransactionid==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("financialtransactionid cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localFinancialtransactionid);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localResponseMessageTracker){
+                                    namespace = "";
+                                    writeStartElement(null, namespace, "ResponseMessage", xmlWriter);
+                             
+
+                                          if (localResponseMessage==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("ResponseMessage cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localResponseMessage);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localExtensionparametersTracker){
+                                            if (localExtensionparameters==null){
+                                                 throw new org.apache.axis2.databinding.ADBException("extensionparameters cannot be null!!");
+                                            }
+                                           localExtensionparameters.serialize(new javax.xml.namespace.QName("","extensionparameters"),
+                                               xmlWriter);
+                                        }
+                    xmlWriter.writeEndElement();
+               
+
+        }
+
+        private static java.lang.String generatePrefix(java.lang.String namespace) {
+            if(namespace.equals("http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0")){
+                return "ns1";
+            }
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
+        }
+
+        /**
+         * Utility method to write an element start tag.
+         */
+        private void writeStartElement(java.lang.String prefix, java.lang.String namespace, java.lang.String localPart,
+                                       javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+            java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
+            if (writerPrefix != null) {
+                xmlWriter.writeStartElement(namespace, localPart);
+            } else {
+                if (namespace.length() == 0) {
+                    prefix = "";
+                } else if (prefix == null) {
+                    prefix = generatePrefix(namespace);
+                }
+
+                xmlWriter.writeStartElement(prefix, localPart, namespace);
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+        }
+        
+        /**
+         * Util method to write an attribute with the ns prefix
+         */
+        private void writeAttribute(java.lang.String prefix,java.lang.String namespace,java.lang.String attName,
+                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
+            if (xmlWriter.getPrefix(namespace) == null) {
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+            xmlWriter.writeAttribute(namespace,attName,attValue);
+        }
+
+        /**
+         * Util method to write an attribute without the ns prefix
+         */
+        private void writeAttribute(java.lang.String namespace,java.lang.String attName,
+                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
+            if (namespace.equals("")) {
+                xmlWriter.writeAttribute(attName,attValue);
+            } else {
+                registerPrefix(xmlWriter, namespace);
+                xmlWriter.writeAttribute(namespace,attName,attValue);
+            }
+        }
+
+
+           /**
+             * Util method to write an attribute without the ns prefix
+             */
+            private void writeQNameAttribute(java.lang.String namespace, java.lang.String attName,
+                                             javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+
+                java.lang.String attributeNamespace = qname.getNamespaceURI();
+                java.lang.String attributePrefix = xmlWriter.getPrefix(attributeNamespace);
+                if (attributePrefix == null) {
+                    attributePrefix = registerPrefix(xmlWriter, attributeNamespace);
+                }
+                java.lang.String attributeValue;
+                if (attributePrefix.trim().length() > 0) {
+                    attributeValue = attributePrefix + ":" + qname.getLocalPart();
+                } else {
+                    attributeValue = qname.getLocalPart();
+                }
+
+                if (namespace.equals("")) {
+                    xmlWriter.writeAttribute(attName, attributeValue);
+                } else {
+                    registerPrefix(xmlWriter, namespace);
+                    xmlWriter.writeAttribute(namespace, attName, attributeValue);
+                }
+            }
+        /**
+         *  method to handle Qnames
+         */
+
+        private void writeQName(javax.xml.namespace.QName qname,
+                                javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+            java.lang.String namespaceURI = qname.getNamespaceURI();
+            if (namespaceURI != null) {
+                java.lang.String prefix = xmlWriter.getPrefix(namespaceURI);
+                if (prefix == null) {
+                    prefix = generatePrefix(namespaceURI);
+                    xmlWriter.writeNamespace(prefix, namespaceURI);
+                    xmlWriter.setPrefix(prefix,namespaceURI);
+                }
+
+                if (prefix.trim().length() > 0){
+                    xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+                } else {
+                    // i.e this is the default namespace
+                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+                }
+
+            } else {
+                xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+            }
+        }
+
+        private void writeQNames(javax.xml.namespace.QName[] qnames,
+                                 javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+
+            if (qnames != null) {
+                // we have to store this data until last moment since it is not possible to write any
+                // namespace data after writing the charactor data
+                java.lang.StringBuffer stringToWrite = new java.lang.StringBuffer();
+                java.lang.String namespaceURI = null;
+                java.lang.String prefix = null;
+
+                for (int i = 0; i < qnames.length; i++) {
+                    if (i > 0) {
+                        stringToWrite.append(" ");
+                    }
+                    namespaceURI = qnames[i].getNamespaceURI();
+                    if (namespaceURI != null) {
+                        prefix = xmlWriter.getPrefix(namespaceURI);
+                        if ((prefix == null) || (prefix.length() == 0)) {
+                            prefix = generatePrefix(namespaceURI);
+                            xmlWriter.writeNamespace(prefix, namespaceURI);
+                            xmlWriter.setPrefix(prefix,namespaceURI);
+                        }
+
+                        if (prefix.trim().length() > 0){
+                            stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                        } else {
+                            stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                        }
+                    } else {
+                        stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                    }
+                }
+                xmlWriter.writeCharacters(stringToWrite.toString());
+            }
+
+        }
+
+
+        /**
+         * Register a namespace prefix
+         */
+        private java.lang.String registerPrefix(javax.xml.stream.XMLStreamWriter xmlWriter, java.lang.String namespace) throws javax.xml.stream.XMLStreamException {
+            java.lang.String prefix = xmlWriter.getPrefix(namespace);
+            if (prefix == null) {
+                prefix = generatePrefix(namespace);
+                while (xmlWriter.getNamespaceContext().getNamespaceURI(prefix) != null) {
+                    prefix = org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
+                }
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+            return prefix;
+        }
+
+
+  
+        /**
+        * databinding method to get an XML representation of this object
+        *
+        */
+        public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName)
+                    throws org.apache.axis2.databinding.ADBException{
+
+
+        
+                 java.util.ArrayList elementList = new java.util.ArrayList();
+                 java.util.ArrayList attribList = new java.util.ArrayList();
+
+                 if (localOrginatingpartnerfeeTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "orginatingpartnerfee"));
+                                 
+                                        if (localOrginatingpartnerfee != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localOrginatingpartnerfee));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("orginatingpartnerfee cannot be null!!");
+                                        }
+                                    } if (localOrginatingpartnerbalanceafterTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "orginatingpartnerbalanceafter"));
+                                 
+                                        if (localOrginatingpartnerbalanceafter != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localOrginatingpartnerbalanceafter));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("orginatingpartnerbalanceafter cannot be null!!");
+                                        }
+                                    } if (localDestinationpartnerbalanceafterTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "destinationpartnerbalanceafter"));
+                                 
+                                        if (localDestinationpartnerbalanceafter != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localDestinationpartnerbalanceafter));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("destinationpartnerbalanceafter cannot be null!!");
+                                        }
+                                    } if (localStatuscodeTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "statuscode"));
+                                 
+                                        if (localStatuscode != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localStatuscode));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("statuscode cannot be null!!");
+                                        }
+                                    } if (localFinancialtransactionidTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "financialtransactionid"));
+                                 
+                                        if (localFinancialtransactionid != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localFinancialtransactionid));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("financialtransactionid cannot be null!!");
+                                        }
+                                    } if (localResponseMessageTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "ResponseMessage"));
+                                 
+                                        if (localResponseMessage != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localResponseMessage));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("ResponseMessage cannot be null!!");
+                                        }
+                                    } if (localExtensionparametersTracker){
+                            elementList.add(new javax.xml.namespace.QName("",
+                                                                      "extensionparameters"));
+                            
+                            
+                                    if (localExtensionparameters==null){
+                                         throw new org.apache.axis2.databinding.ADBException("extensionparameters cannot be null!!");
+                                    }
+                                    elementList.add(localExtensionparameters);
+                                }
+
+                return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
+            
+            
+
+        }
+
+  
+
+     /**
+      *  Factory class that keeps the parse method
+      */
+    public static class Factory{
+
+        
+        
+
+        /**
+        * static method to create the object
+        * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
+        *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+        * Postcondition: If this object is an element, the reader is positioned at its end element
+        *                If this object is a complex type, the reader is positioned at the end element of its outer element
+        */
+        public static Cashoutresponse parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            Cashoutresponse object =
+                new Cashoutresponse();
+
+            int event;
+            java.lang.String nillableValue = null;
+            java.lang.String prefix ="";
+            java.lang.String namespaceuri ="";
+            try {
+                
+                while (!reader.isStartElement() && !reader.isEndElement())
+                    reader.next();
+
+                
+                if (reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","type")!=null){
+                  java.lang.String fullTypeName = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance",
+                        "type");
+                  if (fullTypeName!=null){
+                    java.lang.String nsPrefix = null;
+                    if (fullTypeName.indexOf(":") > -1){
+                        nsPrefix = fullTypeName.substring(0,fullTypeName.indexOf(":"));
+                    }
+                    nsPrefix = nsPrefix==null?"":nsPrefix;
+
+                    java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
+                    
+                            if (!"cashoutresponse".equals(type)){
+                                //find namespace for the prefix
+                                java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
+                                return (Cashoutresponse)ExtensionMapper.getTypeObject(
+                                     nsUri,type,reader);
+                              }
+                        
+
+                  }
+                
+
+                }
+
+                
+
+                
+                // Note all attributes that were handled. Used to differ normal attributes
+                // from anyAttributes.
+                java.util.Vector handledAttributes = new java.util.Vector();
+                
+
+                
+                    
+                    reader.next();
+                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","orginatingpartnerfee").equals(reader.getName())){
+                                
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"orginatingpartnerfee" +"  cannot be null");
+                                    }
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setOrginatingpartnerfee(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","orginatingpartnerbalanceafter").equals(reader.getName())){
+                                
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"orginatingpartnerbalanceafter" +"  cannot be null");
+                                    }
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setOrginatingpartnerbalanceafter(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","destinationpartnerbalanceafter").equals(reader.getName())){
+                                
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"destinationpartnerbalanceafter" +"  cannot be null");
+                                    }
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setDestinationpartnerbalanceafter(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","statuscode").equals(reader.getName())){
+                                
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"statuscode" +"  cannot be null");
+                                    }
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setStatuscode(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","financialtransactionid").equals(reader.getName())){
+                                
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"financialtransactionid" +"  cannot be null");
+                                    }
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setFinancialtransactionid(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","ResponseMessage").equals(reader.getName())){
+                                
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"ResponseMessage" +"  cannot be null");
+                                    }
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setResponseMessage(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
                                     
@@ -5226,2293 +7098,6 @@
                                                     object.setExtensionparam((java.lang.String[])
                                                         list3.toArray(new java.lang.String[list3.size()]));
                                                 
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                  
-                            while (!reader.isStartElement() && !reader.isEndElement())
-                                reader.next();
-                            
-                                if (reader.isStartElement())
-                                // A start element we are not expecting indicates a trailing invalid property
-                                throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
-                            
-
-
-
-            } catch (javax.xml.stream.XMLStreamException e) {
-                throw new java.lang.Exception(e);
-            }
-
-            return object;
-        }
-
-        }//end of factory class
-
-        
-
-        }
-           
-    
-        public static class Cashoutrequest
-        implements org.apache.axis2.databinding.ADBBean{
-        /* This type was generated from the piece of schema that had
-                name = cashoutrequest
-                Namespace URI = http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0
-                Namespace Prefix = ns1
-                */
-            
-
-                        /**
-                        * field for Orginatingresourceid
-                        */
-
-                        
-                                    protected java.lang.String localOrginatingresourceid ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localOrginatingresourceidTracker = false ;
-
-                           public boolean isOrginatingresourceidSpecified(){
-                               return localOrginatingresourceidTracker;
-                           }
-
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return java.lang.String
-                           */
-                           public  java.lang.String getOrginatingresourceid(){
-                               return localOrginatingresourceid;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param Orginatingresourceid
-                               */
-                               public void setOrginatingresourceid(java.lang.String param){
-                            localOrginatingresourceidTracker = param != null;
-                                   
-                                            this.localOrginatingresourceid=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for Destinationresourceid
-                        */
-
-                        
-                                    protected java.lang.String localDestinationresourceid ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localDestinationresourceidTracker = false ;
-
-                           public boolean isDestinationresourceidSpecified(){
-                               return localDestinationresourceidTracker;
-                           }
-
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return java.lang.String
-                           */
-                           public  java.lang.String getDestinationresourceid(){
-                               return localDestinationresourceid;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param Destinationresourceid
-                               */
-                               public void setDestinationresourceid(java.lang.String param){
-                            localDestinationresourceidTracker = param != null;
-                                   
-                                            this.localDestinationresourceid=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for Amount
-                        */
-
-                        
-                                    protected java.lang.String localAmount ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localAmountTracker = false ;
-
-                           public boolean isAmountSpecified(){
-                               return localAmountTracker;
-                           }
-
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return java.lang.String
-                           */
-                           public  java.lang.String getAmount(){
-                               return localAmount;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param Amount
-                               */
-                               public void setAmount(java.lang.String param){
-                            localAmountTracker = param != null;
-                                   
-                                            this.localAmount=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for Sendingdescription
-                        */
-
-                        
-                                    protected java.lang.String localSendingdescription ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localSendingdescriptionTracker = false ;
-
-                           public boolean isSendingdescriptionSpecified(){
-                               return localSendingdescriptionTracker;
-                           }
-
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return java.lang.String
-                           */
-                           public  java.lang.String getSendingdescription(){
-                               return localSendingdescription;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param Sendingdescription
-                               */
-                               public void setSendingdescription(java.lang.String param){
-                            localSendingdescriptionTracker = param != null;
-                                   
-                                            this.localSendingdescription=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for Receivingdescription
-                        */
-
-                        
-                                    protected java.lang.String localReceivingdescription ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localReceivingdescriptionTracker = false ;
-
-                           public boolean isReceivingdescriptionSpecified(){
-                               return localReceivingdescriptionTracker;
-                           }
-
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return java.lang.String
-                           */
-                           public  java.lang.String getReceivingdescription(){
-                               return localReceivingdescription;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param Receivingdescription
-                               */
-                               public void setReceivingdescription(java.lang.String param){
-                            localReceivingdescriptionTracker = param != null;
-                                   
-                                            this.localReceivingdescription=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for Extensionparameters
-                        */
-
-                        
-                                    protected ParameterExtension localExtensionparameters ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localExtensionparametersTracker = false ;
-
-                           public boolean isExtensionparametersSpecified(){
-                               return localExtensionparametersTracker;
-                           }
-
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return ParameterExtension
-                           */
-                           public  ParameterExtension getExtensionparameters(){
-                               return localExtensionparameters;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param Extensionparameters
-                               */
-                               public void setExtensionparameters(ParameterExtension param){
-                            localExtensionparametersTracker = param != null;
-                                   
-                                            this.localExtensionparameters=param;
-                                    
-
-                               }
-                            
-     
-
-     
-        /**
-        *
-        * @param parentQName
-        * @param factory
-        * @return org.apache.axiom.om.OMElement
-        */
-       public org.apache.axiom.om.OMElement getOMElement (
-               final javax.xml.namespace.QName parentQName,
-               final org.apache.axiom.om.OMFactory factory) throws org.apache.axis2.databinding.ADBException{
-
-
-        
-               org.apache.axiom.om.OMDataSource dataSource =
-                       new org.apache.axis2.databinding.ADBDataSource(this,parentQName);
-               return factory.createOMElement(dataSource,parentQName);
-            
-        }
-
-         public void serialize(final javax.xml.namespace.QName parentQName,
-                                       javax.xml.stream.XMLStreamWriter xmlWriter)
-                                throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
-                           serialize(parentQName,xmlWriter,false);
-         }
-
-         public void serialize(final javax.xml.namespace.QName parentQName,
-                               javax.xml.stream.XMLStreamWriter xmlWriter,
-                               boolean serializeType)
-            throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
-            
-                
-
-
-                java.lang.String prefix = null;
-                java.lang.String namespace = null;
-                
-
-                    prefix = parentQName.getPrefix();
-                    namespace = parentQName.getNamespaceURI();
-                    writeStartElement(prefix, namespace, parentQName.getLocalPart(), xmlWriter);
-                
-                  if (serializeType){
-               
-
-                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0");
-                   if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
-                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           namespacePrefix+":cashoutrequest",
-                           xmlWriter);
-                   } else {
-                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           "cashoutrequest",
-                           xmlWriter);
-                   }
-
-               
-                   }
-                if (localOrginatingresourceidTracker){
-                                    namespace = "";
-                                    writeStartElement(null, namespace, "orginatingresourceid", xmlWriter);
-                             
-
-                                          if (localOrginatingresourceid==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("orginatingresourceid cannot be null!!");
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localOrginatingresourceid);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
-                             } if (localDestinationresourceidTracker){
-                                    namespace = "";
-                                    writeStartElement(null, namespace, "destinationresourceid", xmlWriter);
-                             
-
-                                          if (localDestinationresourceid==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("destinationresourceid cannot be null!!");
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localDestinationresourceid);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
-                             } if (localAmountTracker){
-                                    namespace = "";
-                                    writeStartElement(null, namespace, "amount", xmlWriter);
-                             
-
-                                          if (localAmount==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("amount cannot be null!!");
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localAmount);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
-                             } if (localSendingdescriptionTracker){
-                                    namespace = "";
-                                    writeStartElement(null, namespace, "sendingdescription", xmlWriter);
-                             
-
-                                          if (localSendingdescription==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("sendingdescription cannot be null!!");
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localSendingdescription);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
-                             } if (localReceivingdescriptionTracker){
-                                    namespace = "";
-                                    writeStartElement(null, namespace, "receivingdescription", xmlWriter);
-                             
-
-                                          if (localReceivingdescription==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("receivingdescription cannot be null!!");
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localReceivingdescription);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
-                             } if (localExtensionparametersTracker){
-                                            if (localExtensionparameters==null){
-                                                 throw new org.apache.axis2.databinding.ADBException("extensionparameters cannot be null!!");
-                                            }
-                                           localExtensionparameters.serialize(new javax.xml.namespace.QName("","extensionparameters"),
-                                               xmlWriter);
-                                        }
-                    xmlWriter.writeEndElement();
-               
-
-        }
-
-        private static java.lang.String generatePrefix(java.lang.String namespace) {
-            if(namespace.equals("http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0")){
-                return "ns1";
-            }
-            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-        }
-
-        /**
-         * Utility method to write an element start tag.
-         */
-        private void writeStartElement(java.lang.String prefix, java.lang.String namespace, java.lang.String localPart,
-                                       javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-            java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
-            if (writerPrefix != null) {
-                xmlWriter.writeStartElement(namespace, localPart);
-            } else {
-                if (namespace.length() == 0) {
-                    prefix = "";
-                } else if (prefix == null) {
-                    prefix = generatePrefix(namespace);
-                }
-
-                xmlWriter.writeStartElement(prefix, localPart, namespace);
-                xmlWriter.writeNamespace(prefix, namespace);
-                xmlWriter.setPrefix(prefix, namespace);
-            }
-        }
-        
-        /**
-         * Util method to write an attribute with the ns prefix
-         */
-        private void writeAttribute(java.lang.String prefix,java.lang.String namespace,java.lang.String attName,
-                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
-            if (xmlWriter.getPrefix(namespace) == null) {
-                xmlWriter.writeNamespace(prefix, namespace);
-                xmlWriter.setPrefix(prefix, namespace);
-            }
-            xmlWriter.writeAttribute(namespace,attName,attValue);
-        }
-
-        /**
-         * Util method to write an attribute without the ns prefix
-         */
-        private void writeAttribute(java.lang.String namespace,java.lang.String attName,
-                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
-            if (namespace.equals("")) {
-                xmlWriter.writeAttribute(attName,attValue);
-            } else {
-                registerPrefix(xmlWriter, namespace);
-                xmlWriter.writeAttribute(namespace,attName,attValue);
-            }
-        }
-
-
-           /**
-             * Util method to write an attribute without the ns prefix
-             */
-            private void writeQNameAttribute(java.lang.String namespace, java.lang.String attName,
-                                             javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-
-                java.lang.String attributeNamespace = qname.getNamespaceURI();
-                java.lang.String attributePrefix = xmlWriter.getPrefix(attributeNamespace);
-                if (attributePrefix == null) {
-                    attributePrefix = registerPrefix(xmlWriter, attributeNamespace);
-                }
-                java.lang.String attributeValue;
-                if (attributePrefix.trim().length() > 0) {
-                    attributeValue = attributePrefix + ":" + qname.getLocalPart();
-                } else {
-                    attributeValue = qname.getLocalPart();
-                }
-
-                if (namespace.equals("")) {
-                    xmlWriter.writeAttribute(attName, attributeValue);
-                } else {
-                    registerPrefix(xmlWriter, namespace);
-                    xmlWriter.writeAttribute(namespace, attName, attributeValue);
-                }
-            }
-        /**
-         *  method to handle Qnames
-         */
-
-        private void writeQName(javax.xml.namespace.QName qname,
-                                javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-            java.lang.String namespaceURI = qname.getNamespaceURI();
-            if (namespaceURI != null) {
-                java.lang.String prefix = xmlWriter.getPrefix(namespaceURI);
-                if (prefix == null) {
-                    prefix = generatePrefix(namespaceURI);
-                    xmlWriter.writeNamespace(prefix, namespaceURI);
-                    xmlWriter.setPrefix(prefix,namespaceURI);
-                }
-
-                if (prefix.trim().length() > 0){
-                    xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-                } else {
-                    // i.e this is the default namespace
-                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-                }
-
-            } else {
-                xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-        }
-
-        private void writeQNames(javax.xml.namespace.QName[] qnames,
-                                 javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-
-            if (qnames != null) {
-                // we have to store this data until last moment since it is not possible to write any
-                // namespace data after writing the charactor data
-                java.lang.StringBuffer stringToWrite = new java.lang.StringBuffer();
-                java.lang.String namespaceURI = null;
-                java.lang.String prefix = null;
-
-                for (int i = 0; i < qnames.length; i++) {
-                    if (i > 0) {
-                        stringToWrite.append(" ");
-                    }
-                    namespaceURI = qnames[i].getNamespaceURI();
-                    if (namespaceURI != null) {
-                        prefix = xmlWriter.getPrefix(namespaceURI);
-                        if ((prefix == null) || (prefix.length() == 0)) {
-                            prefix = generatePrefix(namespaceURI);
-                            xmlWriter.writeNamespace(prefix, namespaceURI);
-                            xmlWriter.setPrefix(prefix,namespaceURI);
-                        }
-
-                        if (prefix.trim().length() > 0){
-                            stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                        } else {
-                            stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                        }
-                    } else {
-                        stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                }
-                xmlWriter.writeCharacters(stringToWrite.toString());
-            }
-
-        }
-
-
-        /**
-         * Register a namespace prefix
-         */
-        private java.lang.String registerPrefix(javax.xml.stream.XMLStreamWriter xmlWriter, java.lang.String namespace) throws javax.xml.stream.XMLStreamException {
-            java.lang.String prefix = xmlWriter.getPrefix(namespace);
-            if (prefix == null) {
-                prefix = generatePrefix(namespace);
-                while (xmlWriter.getNamespaceContext().getNamespaceURI(prefix) != null) {
-                    prefix = org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-                }
-                xmlWriter.writeNamespace(prefix, namespace);
-                xmlWriter.setPrefix(prefix, namespace);
-            }
-            return prefix;
-        }
-
-
-  
-        /**
-        * databinding method to get an XML representation of this object
-        *
-        */
-        public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName)
-                    throws org.apache.axis2.databinding.ADBException{
-
-
-        
-                 java.util.ArrayList elementList = new java.util.ArrayList();
-                 java.util.ArrayList attribList = new java.util.ArrayList();
-
-                 if (localOrginatingresourceidTracker){
-                                      elementList.add(new javax.xml.namespace.QName("",
-                                                                      "orginatingresourceid"));
-                                 
-                                        if (localOrginatingresourceid != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localOrginatingresourceid));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("orginatingresourceid cannot be null!!");
-                                        }
-                                    } if (localDestinationresourceidTracker){
-                                      elementList.add(new javax.xml.namespace.QName("",
-                                                                      "destinationresourceid"));
-                                 
-                                        if (localDestinationresourceid != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localDestinationresourceid));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("destinationresourceid cannot be null!!");
-                                        }
-                                    } if (localAmountTracker){
-                                      elementList.add(new javax.xml.namespace.QName("",
-                                                                      "amount"));
-                                 
-                                        if (localAmount != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAmount));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("amount cannot be null!!");
-                                        }
-                                    } if (localSendingdescriptionTracker){
-                                      elementList.add(new javax.xml.namespace.QName("",
-                                                                      "sendingdescription"));
-                                 
-                                        if (localSendingdescription != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSendingdescription));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("sendingdescription cannot be null!!");
-                                        }
-                                    } if (localReceivingdescriptionTracker){
-                                      elementList.add(new javax.xml.namespace.QName("",
-                                                                      "receivingdescription"));
-                                 
-                                        if (localReceivingdescription != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localReceivingdescription));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("receivingdescription cannot be null!!");
-                                        }
-                                    } if (localExtensionparametersTracker){
-                            elementList.add(new javax.xml.namespace.QName("",
-                                                                      "extensionparameters"));
-                            
-                            
-                                    if (localExtensionparameters==null){
-                                         throw new org.apache.axis2.databinding.ADBException("extensionparameters cannot be null!!");
-                                    }
-                                    elementList.add(localExtensionparameters);
-                                }
-
-                return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
-            
-            
-
-        }
-
-  
-
-     /**
-      *  Factory class that keeps the parse method
-      */
-    public static class Factory{
-
-        
-        
-
-        /**
-        * static method to create the object
-        * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-        *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
-        * Postcondition: If this object is an element, the reader is positioned at its end element
-        *                If this object is a complex type, the reader is positioned at the end element of its outer element
-        */
-        public static Cashoutrequest parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
-            Cashoutrequest object =
-                new Cashoutrequest();
-
-            int event;
-            java.lang.String nillableValue = null;
-            java.lang.String prefix ="";
-            java.lang.String namespaceuri ="";
-            try {
-                
-                while (!reader.isStartElement() && !reader.isEndElement())
-                    reader.next();
-
-                
-                if (reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","type")!=null){
-                  java.lang.String fullTypeName = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance",
-                        "type");
-                  if (fullTypeName!=null){
-                    java.lang.String nsPrefix = null;
-                    if (fullTypeName.indexOf(":") > -1){
-                        nsPrefix = fullTypeName.substring(0,fullTypeName.indexOf(":"));
-                    }
-                    nsPrefix = nsPrefix==null?"":nsPrefix;
-
-                    java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
-                    
-                            if (!"cashoutrequest".equals(type)){
-                                //find namespace for the prefix
-                                java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                                return (Cashoutrequest)ExtensionMapper.getTypeObject(
-                                     nsUri,type,reader);
-                              }
-                        
-
-                  }
-                
-
-                }
-
-                
-
-                
-                // Note all attributes that were handled. Used to differ normal attributes
-                // from anyAttributes.
-                java.util.Vector handledAttributes = new java.util.Vector();
-                
-
-                
-                    
-                    reader.next();
-                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","orginatingresourceid").equals(reader.getName())){
-                                
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"orginatingresourceid" +"  cannot be null");
-                                    }
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setOrginatingresourceid(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","destinationresourceid").equals(reader.getName())){
-                                
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"destinationresourceid" +"  cannot be null");
-                                    }
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setDestinationresourceid(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","amount").equals(reader.getName())){
-                                
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"amount" +"  cannot be null");
-                                    }
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setAmount(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","sendingdescription").equals(reader.getName())){
-                                
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"sendingdescription" +"  cannot be null");
-                                    }
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setSendingdescription(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","receivingdescription").equals(reader.getName())){
-                                
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"receivingdescription" +"  cannot be null");
-                                    }
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setReceivingdescription(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","extensionparameters").equals(reader.getName())){
-                                
-                                                object.setExtensionparameters(ParameterExtension.Factory.parse(reader));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                  
-                            while (!reader.isStartElement() && !reader.isEndElement())
-                                reader.next();
-                            
-                                if (reader.isStartElement())
-                                // A start element we are not expecting indicates a trailing invalid property
-                                throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
-                            
-
-
-
-            } catch (javax.xml.stream.XMLStreamException e) {
-                throw new java.lang.Exception(e);
-            }
-
-            return object;
-        }
-
-        }//end of factory class
-
-        
-
-        }
-           
-    
-        public static class StatusCode
-        implements org.apache.axis2.databinding.ADBBean{
-        
-                public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
-                "http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0",
-                "statusCode",
-                "ns1");
-
-            
-
-                        /**
-                        * field for StatusCode
-                        */
-
-                        
-                                    protected java.lang.String localStatusCode ;
-                                
-                            private static java.util.HashMap _table_ = new java.util.HashMap();
-
-                            // Constructor
-                            
-                                protected StatusCode(java.lang.String value, boolean isRegisterValue) {
-                                    localStatusCode = value;
-                                    if (isRegisterValue){
-                                        
-                                               _table_.put(localStatusCode, this);
-                                           
-                                    }
-
-                                }
-                            
-                                    public static final java.lang.String _COMPLETED =
-                                        org.apache.axis2.databinding.utils.ConverterUtil.convertToString("COMPLETED");
-                                
-                                    public static final java.lang.String _REJECTED =
-                                        org.apache.axis2.databinding.utils.ConverterUtil.convertToString("REJECTED");
-                                
-                                    public static final java.lang.String _PENDING =
-                                        org.apache.axis2.databinding.utils.ConverterUtil.convertToString("PENDING");
-                                
-                                    public static final java.lang.String _FAILED =
-                                        org.apache.axis2.databinding.utils.ConverterUtil.convertToString("FAILED");
-                                
-                                    public static final java.lang.String _CREATED =
-                                        org.apache.axis2.databinding.utils.ConverterUtil.convertToString("CREATED");
-                                
-                                public static final StatusCode COMPLETED =
-                                    new StatusCode(_COMPLETED,true);
-                            
-                                public static final StatusCode REJECTED =
-                                    new StatusCode(_REJECTED,true);
-                            
-                                public static final StatusCode PENDING =
-                                    new StatusCode(_PENDING,true);
-                            
-                                public static final StatusCode FAILED =
-                                    new StatusCode(_FAILED,true);
-                            
-                                public static final StatusCode CREATED =
-                                    new StatusCode(_CREATED,true);
-                            
-
-                                public java.lang.String getValue() { return localStatusCode;}
-
-                                public boolean equals(java.lang.Object obj) {return (obj == this);}
-                                public int hashCode() { return toString().hashCode();}
-                                public java.lang.String toString() {
-                                
-                                        return localStatusCode.toString();
-                                    
-
-                                }
-
-                        
-     
-
-     
-        /**
-        *
-        * @param parentQName
-        * @param factory
-        * @return org.apache.axiom.om.OMElement
-        */
-       public org.apache.axiom.om.OMElement getOMElement (
-               final javax.xml.namespace.QName parentQName,
-               final org.apache.axiom.om.OMFactory factory) throws org.apache.axis2.databinding.ADBException{
-
-
-        
-               org.apache.axiom.om.OMDataSource dataSource =
-                       new org.apache.axis2.databinding.ADBDataSource(this,MY_QNAME);
-               return factory.createOMElement(dataSource,MY_QNAME);
-            
-        }
-
-         public void serialize(final javax.xml.namespace.QName parentQName,
-                                       javax.xml.stream.XMLStreamWriter xmlWriter)
-                                throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
-                           serialize(parentQName,xmlWriter,false);
-         }
-
-         public void serialize(final javax.xml.namespace.QName parentQName,
-                               javax.xml.stream.XMLStreamWriter xmlWriter,
-                               boolean serializeType)
-            throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
-            
-                
-                //We can safely assume an element has only one type associated with it
-                
-                            java.lang.String namespace = parentQName.getNamespaceURI();
-                            java.lang.String _localName = parentQName.getLocalPart();
-                        
-                            writeStartElement(null, namespace, _localName, xmlWriter);
-
-                            // add the type details if this is used in a simple type
-                               if (serializeType){
-                                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0");
-                                   if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
-                                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                                           namespacePrefix+":statusCode",
-                                           xmlWriter);
-                                   } else {
-                                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                                           "statusCode",
-                                           xmlWriter);
-                                   }
-                               }
-                            
-                                          if (localStatusCode==null){
-                                            
-                                                     throw new org.apache.axis2.databinding.ADBException("statusCode cannot be null !!");
-                                                
-                                         }else{
-                                        
-                                                       xmlWriter.writeCharacters(localStatusCode);
-                                            
-                                         }
-                                    
-                            xmlWriter.writeEndElement();
-                    
-
-        }
-
-        private static java.lang.String generatePrefix(java.lang.String namespace) {
-            if(namespace.equals("http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0")){
-                return "ns1";
-            }
-            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-        }
-
-        /**
-         * Utility method to write an element start tag.
-         */
-        private void writeStartElement(java.lang.String prefix, java.lang.String namespace, java.lang.String localPart,
-                                       javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-            java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
-            if (writerPrefix != null) {
-                xmlWriter.writeStartElement(namespace, localPart);
-            } else {
-                if (namespace.length() == 0) {
-                    prefix = "";
-                } else if (prefix == null) {
-                    prefix = generatePrefix(namespace);
-                }
-
-                xmlWriter.writeStartElement(prefix, localPart, namespace);
-                xmlWriter.writeNamespace(prefix, namespace);
-                xmlWriter.setPrefix(prefix, namespace);
-            }
-        }
-        
-        /**
-         * Util method to write an attribute with the ns prefix
-         */
-        private void writeAttribute(java.lang.String prefix,java.lang.String namespace,java.lang.String attName,
-                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
-            if (xmlWriter.getPrefix(namespace) == null) {
-                xmlWriter.writeNamespace(prefix, namespace);
-                xmlWriter.setPrefix(prefix, namespace);
-            }
-            xmlWriter.writeAttribute(namespace,attName,attValue);
-        }
-
-        /**
-         * Util method to write an attribute without the ns prefix
-         */
-        private void writeAttribute(java.lang.String namespace,java.lang.String attName,
-                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
-            if (namespace.equals("")) {
-                xmlWriter.writeAttribute(attName,attValue);
-            } else {
-                registerPrefix(xmlWriter, namespace);
-                xmlWriter.writeAttribute(namespace,attName,attValue);
-            }
-        }
-
-
-           /**
-             * Util method to write an attribute without the ns prefix
-             */
-            private void writeQNameAttribute(java.lang.String namespace, java.lang.String attName,
-                                             javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-
-                java.lang.String attributeNamespace = qname.getNamespaceURI();
-                java.lang.String attributePrefix = xmlWriter.getPrefix(attributeNamespace);
-                if (attributePrefix == null) {
-                    attributePrefix = registerPrefix(xmlWriter, attributeNamespace);
-                }
-                java.lang.String attributeValue;
-                if (attributePrefix.trim().length() > 0) {
-                    attributeValue = attributePrefix + ":" + qname.getLocalPart();
-                } else {
-                    attributeValue = qname.getLocalPart();
-                }
-
-                if (namespace.equals("")) {
-                    xmlWriter.writeAttribute(attName, attributeValue);
-                } else {
-                    registerPrefix(xmlWriter, namespace);
-                    xmlWriter.writeAttribute(namespace, attName, attributeValue);
-                }
-            }
-        /**
-         *  method to handle Qnames
-         */
-
-        private void writeQName(javax.xml.namespace.QName qname,
-                                javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-            java.lang.String namespaceURI = qname.getNamespaceURI();
-            if (namespaceURI != null) {
-                java.lang.String prefix = xmlWriter.getPrefix(namespaceURI);
-                if (prefix == null) {
-                    prefix = generatePrefix(namespaceURI);
-                    xmlWriter.writeNamespace(prefix, namespaceURI);
-                    xmlWriter.setPrefix(prefix,namespaceURI);
-                }
-
-                if (prefix.trim().length() > 0){
-                    xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-                } else {
-                    // i.e this is the default namespace
-                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-                }
-
-            } else {
-                xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-        }
-
-        private void writeQNames(javax.xml.namespace.QName[] qnames,
-                                 javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-
-            if (qnames != null) {
-                // we have to store this data until last moment since it is not possible to write any
-                // namespace data after writing the charactor data
-                java.lang.StringBuffer stringToWrite = new java.lang.StringBuffer();
-                java.lang.String namespaceURI = null;
-                java.lang.String prefix = null;
-
-                for (int i = 0; i < qnames.length; i++) {
-                    if (i > 0) {
-                        stringToWrite.append(" ");
-                    }
-                    namespaceURI = qnames[i].getNamespaceURI();
-                    if (namespaceURI != null) {
-                        prefix = xmlWriter.getPrefix(namespaceURI);
-                        if ((prefix == null) || (prefix.length() == 0)) {
-                            prefix = generatePrefix(namespaceURI);
-                            xmlWriter.writeNamespace(prefix, namespaceURI);
-                            xmlWriter.setPrefix(prefix,namespaceURI);
-                        }
-
-                        if (prefix.trim().length() > 0){
-                            stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                        } else {
-                            stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                        }
-                    } else {
-                        stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                }
-                xmlWriter.writeCharacters(stringToWrite.toString());
-            }
-
-        }
-
-
-        /**
-         * Register a namespace prefix
-         */
-        private java.lang.String registerPrefix(javax.xml.stream.XMLStreamWriter xmlWriter, java.lang.String namespace) throws javax.xml.stream.XMLStreamException {
-            java.lang.String prefix = xmlWriter.getPrefix(namespace);
-            if (prefix == null) {
-                prefix = generatePrefix(namespace);
-                while (xmlWriter.getNamespaceContext().getNamespaceURI(prefix) != null) {
-                    prefix = org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-                }
-                xmlWriter.writeNamespace(prefix, namespace);
-                xmlWriter.setPrefix(prefix, namespace);
-            }
-            return prefix;
-        }
-
-
-  
-        /**
-        * databinding method to get an XML representation of this object
-        *
-        */
-        public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName)
-                    throws org.apache.axis2.databinding.ADBException{
-
-
-        
-                
-                //We can safely assume an element has only one type associated with it
-                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(MY_QNAME,
-                            new java.lang.Object[]{
-                            org.apache.axis2.databinding.utils.reader.ADBXMLStreamReader.ELEMENT_TEXT,
-                            org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localStatusCode)
-                            },
-                            null);
-
-        }
-
-  
-
-     /**
-      *  Factory class that keeps the parse method
-      */
-    public static class Factory{
-
-        
-        
-                public static StatusCode fromValue(java.lang.String value)
-                      throws java.lang.IllegalArgumentException {
-                    StatusCode enumeration = (StatusCode)
-                       
-                               _table_.get(value);
-                           
-
-                    if ((enumeration == null) && !((value == null) || (value.equals("")))) {
-                        throw new java.lang.IllegalArgumentException();
-                    }
-                    return enumeration;
-                }
-                public static StatusCode fromString(java.lang.String value,java.lang.String namespaceURI)
-                      throws java.lang.IllegalArgumentException {
-                    try {
-                       
-                                       return fromValue(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(value));
-                                   
-
-                    } catch (java.lang.Exception e) {
-                        throw new java.lang.IllegalArgumentException();
-                    }
-                }
-
-                public static StatusCode fromString(javax.xml.stream.XMLStreamReader xmlStreamReader,
-                                                                    java.lang.String content) {
-                    if (content.indexOf(":") > -1){
-                        java.lang.String prefix = content.substring(0,content.indexOf(":"));
-                        java.lang.String namespaceUri = xmlStreamReader.getNamespaceContext().getNamespaceURI(prefix);
-                        return StatusCode.Factory.fromString(content,namespaceUri);
-                    } else {
-                       return StatusCode.Factory.fromString(content,"");
-                    }
-                }
-            
-
-        /**
-        * static method to create the object
-        * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-        *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
-        * Postcondition: If this object is an element, the reader is positioned at its end element
-        *                If this object is a complex type, the reader is positioned at the end element of its outer element
-        */
-        public static StatusCode parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
-            StatusCode object = null;
-                // initialize a hash map to keep values
-                java.util.Map attributeMap = new java.util.HashMap();
-                java.util.List extraAttributeList = new java.util.ArrayList<org.apache.axiom.om.OMAttribute>();
-            
-
-            int event;
-            java.lang.String nillableValue = null;
-            java.lang.String prefix ="";
-            java.lang.String namespaceuri ="";
-            try {
-                
-                while (!reader.isStartElement() && !reader.isEndElement())
-                    reader.next();
-
-                
-
-                
-                // Note all attributes that were handled. Used to differ normal attributes
-                // from anyAttributes.
-                java.util.Vector handledAttributes = new java.util.Vector();
-                
-
-                   
-                while(!reader.isEndElement()) {
-                    if (reader.isStartElement()  || reader.hasText()){
-                
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"statusCode" +"  cannot be null");
-                                    }
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                        if (content.indexOf(":") > 0) {
-                                            // this seems to be a Qname so find the namespace and send
-                                            prefix = content.substring(0, content.indexOf(":"));
-                                            namespaceuri = reader.getNamespaceURI(prefix);
-                                            object = StatusCode.Factory.fromString(content,namespaceuri);
-                                        } else {
-                                            // this seems to be not a qname send and empty namespace incase of it is
-                                            // check is done in fromString method
-                                            object = StatusCode.Factory.fromString(content,"");
-                                        }
-                                        
-                                        
-                             } else {
-                                reader.next();
-                             }  
-                           }  // end of while loop
-                        
-
-
-
-            } catch (javax.xml.stream.XMLStreamException e) {
-                throw new java.lang.Exception(e);
-            }
-
-            return object;
-        }
-
-        }//end of factory class
-
-        
-
-        }
-           
-    
-        public static class Cashoutresponse
-        implements org.apache.axis2.databinding.ADBBean{
-        /* This type was generated from the piece of schema that had
-                name = cashoutresponse
-                Namespace URI = http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0
-                Namespace Prefix = ns1
-                */
-            
-
-                        /**
-                        * field for Orginatingpartnerfee
-                        */
-
-                        
-                                    protected java.lang.String localOrginatingpartnerfee ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localOrginatingpartnerfeeTracker = false ;
-
-                           public boolean isOrginatingpartnerfeeSpecified(){
-                               return localOrginatingpartnerfeeTracker;
-                           }
-
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return java.lang.String
-                           */
-                           public  java.lang.String getOrginatingpartnerfee(){
-                               return localOrginatingpartnerfee;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param Orginatingpartnerfee
-                               */
-                               public void setOrginatingpartnerfee(java.lang.String param){
-                            localOrginatingpartnerfeeTracker = param != null;
-                                   
-                                            this.localOrginatingpartnerfee=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for Orginatingpartnerbalanceafter
-                        */
-
-                        
-                                    protected java.lang.String localOrginatingpartnerbalanceafter ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localOrginatingpartnerbalanceafterTracker = false ;
-
-                           public boolean isOrginatingpartnerbalanceafterSpecified(){
-                               return localOrginatingpartnerbalanceafterTracker;
-                           }
-
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return java.lang.String
-                           */
-                           public  java.lang.String getOrginatingpartnerbalanceafter(){
-                               return localOrginatingpartnerbalanceafter;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param Orginatingpartnerbalanceafter
-                               */
-                               public void setOrginatingpartnerbalanceafter(java.lang.String param){
-                            localOrginatingpartnerbalanceafterTracker = param != null;
-                                   
-                                            this.localOrginatingpartnerbalanceafter=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for Destinationpartnerbalanceafter
-                        */
-
-                        
-                                    protected java.lang.String localDestinationpartnerbalanceafter ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localDestinationpartnerbalanceafterTracker = false ;
-
-                           public boolean isDestinationpartnerbalanceafterSpecified(){
-                               return localDestinationpartnerbalanceafterTracker;
-                           }
-
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return java.lang.String
-                           */
-                           public  java.lang.String getDestinationpartnerbalanceafter(){
-                               return localDestinationpartnerbalanceafter;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param Destinationpartnerbalanceafter
-                               */
-                               public void setDestinationpartnerbalanceafter(java.lang.String param){
-                            localDestinationpartnerbalanceafterTracker = param != null;
-                                   
-                                            this.localDestinationpartnerbalanceafter=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for Statuscode
-                        */
-
-                        
-                                    protected StatusCode localStatuscode ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localStatuscodeTracker = false ;
-
-                           public boolean isStatuscodeSpecified(){
-                               return localStatuscodeTracker;
-                           }
-
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return StatusCode
-                           */
-                           public  StatusCode getStatuscode(){
-                               return localStatuscode;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param Statuscode
-                               */
-                               public void setStatuscode(StatusCode param){
-                            localStatuscodeTracker = param != null;
-                                   
-                                            this.localStatuscode=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for Financialtransactionid
-                        */
-
-                        
-                                    protected java.lang.String localFinancialtransactionid ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localFinancialtransactionidTracker = false ;
-
-                           public boolean isFinancialtransactionidSpecified(){
-                               return localFinancialtransactionidTracker;
-                           }
-
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return java.lang.String
-                           */
-                           public  java.lang.String getFinancialtransactionid(){
-                               return localFinancialtransactionid;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param Financialtransactionid
-                               */
-                               public void setFinancialtransactionid(java.lang.String param){
-                            localFinancialtransactionidTracker = param != null;
-                                   
-                                            this.localFinancialtransactionid=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for ResponseMessage
-                        */
-
-                        
-                                    protected java.lang.String localResponseMessage ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localResponseMessageTracker = false ;
-
-                           public boolean isResponseMessageSpecified(){
-                               return localResponseMessageTracker;
-                           }
-
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return java.lang.String
-                           */
-                           public  java.lang.String getResponseMessage(){
-                               return localResponseMessage;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param ResponseMessage
-                               */
-                               public void setResponseMessage(java.lang.String param){
-                            localResponseMessageTracker = param != null;
-                                   
-                                            this.localResponseMessage=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for Extensionparameters
-                        */
-
-                        
-                                    protected ParameterExtension localExtensionparameters ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localExtensionparametersTracker = false ;
-
-                           public boolean isExtensionparametersSpecified(){
-                               return localExtensionparametersTracker;
-                           }
-
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return ParameterExtension
-                           */
-                           public  ParameterExtension getExtensionparameters(){
-                               return localExtensionparameters;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param Extensionparameters
-                               */
-                               public void setExtensionparameters(ParameterExtension param){
-                            localExtensionparametersTracker = param != null;
-                                   
-                                            this.localExtensionparameters=param;
-                                    
-
-                               }
-                            
-     
-
-     
-        /**
-        *
-        * @param parentQName
-        * @param factory
-        * @return org.apache.axiom.om.OMElement
-        */
-       public org.apache.axiom.om.OMElement getOMElement (
-               final javax.xml.namespace.QName parentQName,
-               final org.apache.axiom.om.OMFactory factory) throws org.apache.axis2.databinding.ADBException{
-
-
-        
-               org.apache.axiom.om.OMDataSource dataSource =
-                       new org.apache.axis2.databinding.ADBDataSource(this,parentQName);
-               return factory.createOMElement(dataSource,parentQName);
-            
-        }
-
-         public void serialize(final javax.xml.namespace.QName parentQName,
-                                       javax.xml.stream.XMLStreamWriter xmlWriter)
-                                throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
-                           serialize(parentQName,xmlWriter,false);
-         }
-
-         public void serialize(final javax.xml.namespace.QName parentQName,
-                               javax.xml.stream.XMLStreamWriter xmlWriter,
-                               boolean serializeType)
-            throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
-            
-                
-
-
-                java.lang.String prefix = null;
-                java.lang.String namespace = null;
-                
-
-                    prefix = parentQName.getPrefix();
-                    namespace = parentQName.getNamespaceURI();
-                    writeStartElement(prefix, namespace, parentQName.getLocalPart(), xmlWriter);
-                
-                  if (serializeType){
-               
-
-                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0");
-                   if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
-                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           namespacePrefix+":cashoutresponse",
-                           xmlWriter);
-                   } else {
-                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           "cashoutresponse",
-                           xmlWriter);
-                   }
-
-               
-                   }
-                if (localOrginatingpartnerfeeTracker){
-                                    namespace = "";
-                                    writeStartElement(null, namespace, "orginatingpartnerfee", xmlWriter);
-                             
-
-                                          if (localOrginatingpartnerfee==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("orginatingpartnerfee cannot be null!!");
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localOrginatingpartnerfee);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
-                             } if (localOrginatingpartnerbalanceafterTracker){
-                                    namespace = "";
-                                    writeStartElement(null, namespace, "orginatingpartnerbalanceafter", xmlWriter);
-                             
-
-                                          if (localOrginatingpartnerbalanceafter==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("orginatingpartnerbalanceafter cannot be null!!");
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localOrginatingpartnerbalanceafter);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
-                             } if (localDestinationpartnerbalanceafterTracker){
-                                    namespace = "";
-                                    writeStartElement(null, namespace, "destinationpartnerbalanceafter", xmlWriter);
-                             
-
-                                          if (localDestinationpartnerbalanceafter==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("destinationpartnerbalanceafter cannot be null!!");
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localDestinationpartnerbalanceafter);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
-                             } if (localStatuscodeTracker){
-                                            if (localStatuscode==null){
-                                                 throw new org.apache.axis2.databinding.ADBException("statuscode cannot be null!!");
-                                            }
-                                           localStatuscode.serialize(new javax.xml.namespace.QName("","statuscode"),
-                                               xmlWriter);
-                                        } if (localFinancialtransactionidTracker){
-                                    namespace = "";
-                                    writeStartElement(null, namespace, "financialtransactionid", xmlWriter);
-                             
-
-                                          if (localFinancialtransactionid==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("financialtransactionid cannot be null!!");
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localFinancialtransactionid);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
-                             } if (localResponseMessageTracker){
-                                    namespace = "";
-                                    writeStartElement(null, namespace, "ResponseMessage", xmlWriter);
-                             
-
-                                          if (localResponseMessage==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("ResponseMessage cannot be null!!");
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localResponseMessage);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
-                             } if (localExtensionparametersTracker){
-                                            if (localExtensionparameters==null){
-                                                 throw new org.apache.axis2.databinding.ADBException("extensionparameters cannot be null!!");
-                                            }
-                                           localExtensionparameters.serialize(new javax.xml.namespace.QName("","extensionparameters"),
-                                               xmlWriter);
-                                        }
-                    xmlWriter.writeEndElement();
-               
-
-        }
-
-        private static java.lang.String generatePrefix(java.lang.String namespace) {
-            if(namespace.equals("http://swifta.com/subsidiary/mats/serviceprovider/operation/spfinancial/v1.0")){
-                return "ns1";
-            }
-            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-        }
-
-        /**
-         * Utility method to write an element start tag.
-         */
-        private void writeStartElement(java.lang.String prefix, java.lang.String namespace, java.lang.String localPart,
-                                       javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-            java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
-            if (writerPrefix != null) {
-                xmlWriter.writeStartElement(namespace, localPart);
-            } else {
-                if (namespace.length() == 0) {
-                    prefix = "";
-                } else if (prefix == null) {
-                    prefix = generatePrefix(namespace);
-                }
-
-                xmlWriter.writeStartElement(prefix, localPart, namespace);
-                xmlWriter.writeNamespace(prefix, namespace);
-                xmlWriter.setPrefix(prefix, namespace);
-            }
-        }
-        
-        /**
-         * Util method to write an attribute with the ns prefix
-         */
-        private void writeAttribute(java.lang.String prefix,java.lang.String namespace,java.lang.String attName,
-                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
-            if (xmlWriter.getPrefix(namespace) == null) {
-                xmlWriter.writeNamespace(prefix, namespace);
-                xmlWriter.setPrefix(prefix, namespace);
-            }
-            xmlWriter.writeAttribute(namespace,attName,attValue);
-        }
-
-        /**
-         * Util method to write an attribute without the ns prefix
-         */
-        private void writeAttribute(java.lang.String namespace,java.lang.String attName,
-                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
-            if (namespace.equals("")) {
-                xmlWriter.writeAttribute(attName,attValue);
-            } else {
-                registerPrefix(xmlWriter, namespace);
-                xmlWriter.writeAttribute(namespace,attName,attValue);
-            }
-        }
-
-
-           /**
-             * Util method to write an attribute without the ns prefix
-             */
-            private void writeQNameAttribute(java.lang.String namespace, java.lang.String attName,
-                                             javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-
-                java.lang.String attributeNamespace = qname.getNamespaceURI();
-                java.lang.String attributePrefix = xmlWriter.getPrefix(attributeNamespace);
-                if (attributePrefix == null) {
-                    attributePrefix = registerPrefix(xmlWriter, attributeNamespace);
-                }
-                java.lang.String attributeValue;
-                if (attributePrefix.trim().length() > 0) {
-                    attributeValue = attributePrefix + ":" + qname.getLocalPart();
-                } else {
-                    attributeValue = qname.getLocalPart();
-                }
-
-                if (namespace.equals("")) {
-                    xmlWriter.writeAttribute(attName, attributeValue);
-                } else {
-                    registerPrefix(xmlWriter, namespace);
-                    xmlWriter.writeAttribute(namespace, attName, attributeValue);
-                }
-            }
-        /**
-         *  method to handle Qnames
-         */
-
-        private void writeQName(javax.xml.namespace.QName qname,
-                                javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-            java.lang.String namespaceURI = qname.getNamespaceURI();
-            if (namespaceURI != null) {
-                java.lang.String prefix = xmlWriter.getPrefix(namespaceURI);
-                if (prefix == null) {
-                    prefix = generatePrefix(namespaceURI);
-                    xmlWriter.writeNamespace(prefix, namespaceURI);
-                    xmlWriter.setPrefix(prefix,namespaceURI);
-                }
-
-                if (prefix.trim().length() > 0){
-                    xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-                } else {
-                    // i.e this is the default namespace
-                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-                }
-
-            } else {
-                xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-        }
-
-        private void writeQNames(javax.xml.namespace.QName[] qnames,
-                                 javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-
-            if (qnames != null) {
-                // we have to store this data until last moment since it is not possible to write any
-                // namespace data after writing the charactor data
-                java.lang.StringBuffer stringToWrite = new java.lang.StringBuffer();
-                java.lang.String namespaceURI = null;
-                java.lang.String prefix = null;
-
-                for (int i = 0; i < qnames.length; i++) {
-                    if (i > 0) {
-                        stringToWrite.append(" ");
-                    }
-                    namespaceURI = qnames[i].getNamespaceURI();
-                    if (namespaceURI != null) {
-                        prefix = xmlWriter.getPrefix(namespaceURI);
-                        if ((prefix == null) || (prefix.length() == 0)) {
-                            prefix = generatePrefix(namespaceURI);
-                            xmlWriter.writeNamespace(prefix, namespaceURI);
-                            xmlWriter.setPrefix(prefix,namespaceURI);
-                        }
-
-                        if (prefix.trim().length() > 0){
-                            stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                        } else {
-                            stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                        }
-                    } else {
-                        stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                }
-                xmlWriter.writeCharacters(stringToWrite.toString());
-            }
-
-        }
-
-
-        /**
-         * Register a namespace prefix
-         */
-        private java.lang.String registerPrefix(javax.xml.stream.XMLStreamWriter xmlWriter, java.lang.String namespace) throws javax.xml.stream.XMLStreamException {
-            java.lang.String prefix = xmlWriter.getPrefix(namespace);
-            if (prefix == null) {
-                prefix = generatePrefix(namespace);
-                while (xmlWriter.getNamespaceContext().getNamespaceURI(prefix) != null) {
-                    prefix = org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-                }
-                xmlWriter.writeNamespace(prefix, namespace);
-                xmlWriter.setPrefix(prefix, namespace);
-            }
-            return prefix;
-        }
-
-
-  
-        /**
-        * databinding method to get an XML representation of this object
-        *
-        */
-        public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName)
-                    throws org.apache.axis2.databinding.ADBException{
-
-
-        
-                 java.util.ArrayList elementList = new java.util.ArrayList();
-                 java.util.ArrayList attribList = new java.util.ArrayList();
-
-                 if (localOrginatingpartnerfeeTracker){
-                                      elementList.add(new javax.xml.namespace.QName("",
-                                                                      "orginatingpartnerfee"));
-                                 
-                                        if (localOrginatingpartnerfee != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localOrginatingpartnerfee));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("orginatingpartnerfee cannot be null!!");
-                                        }
-                                    } if (localOrginatingpartnerbalanceafterTracker){
-                                      elementList.add(new javax.xml.namespace.QName("",
-                                                                      "orginatingpartnerbalanceafter"));
-                                 
-                                        if (localOrginatingpartnerbalanceafter != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localOrginatingpartnerbalanceafter));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("orginatingpartnerbalanceafter cannot be null!!");
-                                        }
-                                    } if (localDestinationpartnerbalanceafterTracker){
-                                      elementList.add(new javax.xml.namespace.QName("",
-                                                                      "destinationpartnerbalanceafter"));
-                                 
-                                        if (localDestinationpartnerbalanceafter != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localDestinationpartnerbalanceafter));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("destinationpartnerbalanceafter cannot be null!!");
-                                        }
-                                    } if (localStatuscodeTracker){
-                            elementList.add(new javax.xml.namespace.QName("",
-                                                                      "statuscode"));
-                            
-                            
-                                    if (localStatuscode==null){
-                                         throw new org.apache.axis2.databinding.ADBException("statuscode cannot be null!!");
-                                    }
-                                    elementList.add(localStatuscode);
-                                } if (localFinancialtransactionidTracker){
-                                      elementList.add(new javax.xml.namespace.QName("",
-                                                                      "financialtransactionid"));
-                                 
-                                        if (localFinancialtransactionid != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localFinancialtransactionid));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("financialtransactionid cannot be null!!");
-                                        }
-                                    } if (localResponseMessageTracker){
-                                      elementList.add(new javax.xml.namespace.QName("",
-                                                                      "ResponseMessage"));
-                                 
-                                        if (localResponseMessage != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localResponseMessage));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("ResponseMessage cannot be null!!");
-                                        }
-                                    } if (localExtensionparametersTracker){
-                            elementList.add(new javax.xml.namespace.QName("",
-                                                                      "extensionparameters"));
-                            
-                            
-                                    if (localExtensionparameters==null){
-                                         throw new org.apache.axis2.databinding.ADBException("extensionparameters cannot be null!!");
-                                    }
-                                    elementList.add(localExtensionparameters);
-                                }
-
-                return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
-            
-            
-
-        }
-
-  
-
-     /**
-      *  Factory class that keeps the parse method
-      */
-    public static class Factory{
-
-        
-        
-
-        /**
-        * static method to create the object
-        * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-        *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
-        * Postcondition: If this object is an element, the reader is positioned at its end element
-        *                If this object is a complex type, the reader is positioned at the end element of its outer element
-        */
-        public static Cashoutresponse parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
-            Cashoutresponse object =
-                new Cashoutresponse();
-
-            int event;
-            java.lang.String nillableValue = null;
-            java.lang.String prefix ="";
-            java.lang.String namespaceuri ="";
-            try {
-                
-                while (!reader.isStartElement() && !reader.isEndElement())
-                    reader.next();
-
-                
-                if (reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","type")!=null){
-                  java.lang.String fullTypeName = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance",
-                        "type");
-                  if (fullTypeName!=null){
-                    java.lang.String nsPrefix = null;
-                    if (fullTypeName.indexOf(":") > -1){
-                        nsPrefix = fullTypeName.substring(0,fullTypeName.indexOf(":"));
-                    }
-                    nsPrefix = nsPrefix==null?"":nsPrefix;
-
-                    java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
-                    
-                            if (!"cashoutresponse".equals(type)){
-                                //find namespace for the prefix
-                                java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                                return (Cashoutresponse)ExtensionMapper.getTypeObject(
-                                     nsUri,type,reader);
-                              }
-                        
-
-                  }
-                
-
-                }
-
-                
-
-                
-                // Note all attributes that were handled. Used to differ normal attributes
-                // from anyAttributes.
-                java.util.Vector handledAttributes = new java.util.Vector();
-                
-
-                
-                    
-                    reader.next();
-                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","orginatingpartnerfee").equals(reader.getName())){
-                                
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"orginatingpartnerfee" +"  cannot be null");
-                                    }
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setOrginatingpartnerfee(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","orginatingpartnerbalanceafter").equals(reader.getName())){
-                                
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"orginatingpartnerbalanceafter" +"  cannot be null");
-                                    }
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setOrginatingpartnerbalanceafter(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","destinationpartnerbalanceafter").equals(reader.getName())){
-                                
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"destinationpartnerbalanceafter" +"  cannot be null");
-                                    }
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setDestinationpartnerbalanceafter(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","statuscode").equals(reader.getName())){
-                                
-                                                object.setStatuscode(StatusCode.Factory.parse(reader));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","financialtransactionid").equals(reader.getName())){
-                                
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"financialtransactionid" +"  cannot be null");
-                                    }
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setFinancialtransactionid(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","ResponseMessage").equals(reader.getName())){
-                                
-                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"ResponseMessage" +"  cannot be null");
-                                    }
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setResponseMessage(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","extensionparameters").equals(reader.getName())){
-                                
-                                                object.setExtensionparameters(ParameterExtension.Factory.parse(reader));
-                                              
-                                        reader.next();
-                                    
                               }  // End of if for expected property start element
                                 
                                     else {
