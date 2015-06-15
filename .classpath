@@ -3,6 +3,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/AxisLibrary"/>
-	<classpathentry kind="lib" path="/PSACoreModuleEngine/lib/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/commons-lang-2.6.jar"/>
 	<classpathentry kind="output" path="target"/>
 </classpath>
